@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { RouterLink } from 'vue-router'
 defineProps({
    name: String,
