@@ -4,13 +4,15 @@
   "private": true,
   "type": "module",
   "author": {
-    "name": "Your Name",
-    "email": "abc@gmail.com"
+    "name": "TranXuanPhong25",
+    "email": "tranxuanphong26525@gmail.com"
   },
   "homepage": "https://github.com/TranXuanPhong25/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
