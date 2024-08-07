@@ -25,14 +25,14 @@ const handleActive = (index: number) => {
 <template>
    <header class="flex w-full justify-center pt-6 pb-6 fixed bg-slate-900/10 backdrop-blur-sm   ">
       <nav class="flex gap-3 msm:hidden">
-         <NavigatorButton @click="handleActive(0)" name="Home" path="/" :active="buttons[0].active">
+         <NavigatorButton @click="handleActive(0)" name="Home" :path="buttons[0].path" :active="buttons[0].active">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"
                   d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(1)" name="Projects" path="/projects" :active="buttons[1].active">
+         <NavigatorButton @click="handleActive(1)" name="Projects" :path="buttons[1].path" :active="buttons[1].active">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
@@ -41,7 +41,7 @@ const handleActive = (index: number) => {
             </svg>
 
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(2)" name="Contact" path="contact" :active="buttons[2].active">
+         <NavigatorButton @click="handleActive(2)" name="Contact" :path="buttons[2].path" :active="buttons[2].active">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"
