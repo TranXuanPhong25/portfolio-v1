@@ -1,11 +1,18 @@
 {
-  "name": " portfolio",
+  "name": "portfolio",
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "author": {
+    "name": "TranXuanPhong25",
+    "email": "tranxuanphong26525@gmail.com"
+  },
+  "homepage": "https://github.com/TranXuanPhong25/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
@@ -31,6 +38,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
+    "gh-pages": "^6.1.1",
     "npm-run-all2": "^6.2.0",
     "postcss": "^8.4.40",
     "prettier": "^3.2.5",
