@@ -25,15 +25,7 @@ jobs:
     deploy:
         environment:
             name: github-pages
-<<<<<<< HEAD
-<<<<<<< HEAD
             url: ${{ steps.deployment.outputs.page_url }}
-=======
-            url: ${{ steps.deployment.outputs.page_url }}/portfolio
->>>>>>> e8951fe (test)
-=======
-            url: ${{ steps.deployment.outputs.page_url }}
->>>>>>> 09da848 (retest)
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
