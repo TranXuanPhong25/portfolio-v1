@@ -12,7 +12,7 @@ const buttons: Button | any = ref([
    { name: "Contact", path: "/contact", active: false }
 ])
 const handleActive = (index: number) => {
-   console.log(index)
+   // console.log(index)
    buttons.value.forEach((button: Button | any, i: Number) => {
       if (i === index) {
          button.active = true
