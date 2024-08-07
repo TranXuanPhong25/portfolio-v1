@@ -4,18 +4,8 @@
   "private": true,
   "type": "module",
   "author": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "name": "TranXuanPhong25",
     "email": "tranxuanphong26525@gmail.com"
-=======
-    "name": "Your Name",
-    "email": "abc@gmail.com"
->>>>>>> 1f0cb01 (a)
-=======
-    "name": "TranXuanPhong25",
-    "email": "tranxuanphong26525@gmail.com"
->>>>>>> 493d622 (chore: try gh-pages)
   },
   "homepage": "https://github.com/TranXuanPhong25/portfolio",
   "scripts": {

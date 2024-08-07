@@ -1,9 +1,5 @@
 <script setup lang="ts">
-<<<<<<< HEAD
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { computed } from 'vue';
-=======
->>>>>>> a5f2c29 (chore: upload vue config)
 import { RouterLink } from 'vue-router'
 const props = defineProps({
    name: String,

@@ -4,20 +4,7 @@
     "compilerOptions": {
         "composite": true,
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "baseUrl": ".",
-=======
-        "baseUrl": "./portfolio",
->>>>>>> 9842db6 (try)
-=======
-        "baseUrl": "./portfolio/",
->>>>>>> d1a16f5 (test2)
-=======
-        "baseUrl": ".",
->>>>>>> be90750 (tr)
         "paths": {
             "@/*": ["./src/*"]
         }
