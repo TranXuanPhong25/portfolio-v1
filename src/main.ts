@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import "./assets/main.css";
 import "./assets/navButton.css";
-
+import "./assets/code-typing-styles.css";
 import "./assets/socialButton.css";
 
 import App from "./App.vue";
