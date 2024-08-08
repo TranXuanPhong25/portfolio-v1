@@ -3,18 +3,11 @@ import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
 import gsap from 'gsap'
 // import { onMounted } from 'vue';
-const numTrails = 20;
-const trailsArr = []
 
 document.addEventListener('mousemove', (e) => {
    const trails = document.createElement('div');
    trails.classList.add('trail');
    document.body.appendChild(trails);
-   trailsArr.push(trails)
-   if (trailsArr.length > numTrails) {
-      trailsArr[0].remove()
-      trailsArr.shift()
-   }
    gsap.fromTo(trails, {
       x: e.clientX + 10,
       y: e.clientY + 10,
@@ -25,6 +18,12 @@ document.addEventListener('mousemove', (e) => {
       y: e.clientY + Math.random() * 200 + 100,
       opacity: 1,
       stagger: 0.01
+      , onComplete: () => {
+         // setTimeout(() => {
+         //    trails.remove()
+         // }, 1000)
+         trails.remove()
+      }
    });
 });
 
