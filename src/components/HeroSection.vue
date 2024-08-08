@@ -59,7 +59,7 @@ onMounted(() => {
                header.classList.toggle('mt-10')
                header.classList.toggle('fixed')
                header.classList.toggle('top-0')
-               header.classList.toggle('bg-background')
+               // header.classList.toggle('bg-background')
                header.classList.toggle('shadow-md')
                header.classList.toggle('bg-slate-900/40')
                header.classList.toggle('py-3')
@@ -79,7 +79,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-   <section class="w-full h-screen flex items-center justify-center bg-background hero-bg relative" ref="main">
+   <section class="w-full h-screen flex items-center justify-center hero-bg relative" ref="main">
 
 
 
