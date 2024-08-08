@@ -37,8 +37,7 @@ const handleActive = (index: number) => {
 }
 </script>
 <template>
-   <header
-      class="flex w-full justify-center py-2 absolute mt-10 backdrop-blur-md z-50 transition-colors duration-400 text-base">
+   <header class="flex w-full justify-center py-2 absolute mt-10  z-50 transition-colors duration-400 text-base">
       <nav class="flex gap-5 msm:hidden">
          <NavigatorButton @click="handleActive(0)" v-bind="buttons[0]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
