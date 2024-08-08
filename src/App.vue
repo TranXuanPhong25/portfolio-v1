@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
 import gsap from 'gsap'
 // import { onMounted } from 'vue';
-const numTrails = 100;
+const numTrails = 20;
 const trailsArr = []
 
 document.addEventListener('mousemove', (e) => {
@@ -21,8 +21,8 @@ document.addEventListener('mousemove', (e) => {
       opacity: 0
    }, {
       duration: 0.8,
-      x: e.clientX + 10,
-      y: e.clientY + 100,
+      x: e.clientX + Math.random() * 50,
+      y: e.clientY + Math.random() * 200 + 100,
       opacity: 1,
       stagger: 0.01
    });
