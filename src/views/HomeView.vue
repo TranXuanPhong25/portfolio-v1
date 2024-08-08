@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SocialBar from '@/components/SocialBar.vue';
+import SocialBar from '@/components/hero/SocialBar.vue';
 import HeroSection from '@/components/HeroSection.vue';
 import AboutSection from '@/components/AboutSection.vue';
 import gsap from 'gsap';

@@ -32,8 +32,10 @@ document.addEventListener('mousemove', (e) => {
 </script>
 
 <template>
+
    <HeaderComponent />
    <RouterView />
+
    <!-- <div class=" min-h-[2 00rem]"></div> -->
 </template>
 
