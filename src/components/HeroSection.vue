@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GetCVButton from './hero/GetCVButton.vue';
 import Typed from 'typed.js';
-import WaveBackground from './about/WaveBackground.vue';
+import WaveBackground from './hero/WaveBackground.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,21 +49,23 @@ onMounted(() => {
                header.classList.toggle('mt-10')
                header.classList.toggle('fixed')
                header.classList.toggle('top-0')
-               header.classList.toggle('shadow-md')
-               header.classList.toggle('bg-slate-900/40')
-               header.classList.toggle('py-3')
-               header.classList.toggle('backdrop-blur-md')
+               // header.classList.toggle('shadow-md')
+               header.classList.toggle('bg-background')
+
+               // header.classList.toggle('bg-slate-900/40')
+               // header.classList.toggle('py-3')
+               // header.classList.toggle('backdrop-blur-md')
             },
             onLeaveBack: () => {
                header.classList.toggle('absolute')
                header.classList.toggle('mt-10')
                header.classList.toggle('fixed')
                header.classList.toggle('top-0')
-               // header.classList.toggle('bg-background')
-               header.classList.toggle('shadow-md')
-               header.classList.toggle('bg-slate-900/40')
-               header.classList.toggle('py-3')
-               header.classList.toggle('backdrop-blur-md')
+               // header.classList.toggle('shadow-md')
+               header.classList.toggle('bg-background')
+               // header.classList.toggle('bg-slate-900/40')
+               // header.classList.toggle('py-3')
+               // header.classList.toggle('backdrop-blur-md')
 
             }
          },

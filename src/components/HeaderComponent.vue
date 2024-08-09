@@ -2,16 +2,8 @@
 import { ref } from 'vue'
 import NavigatorButton from './header/NavigatorButton.vue'
 
-interface Button {
-   name: string,
-   path: string,
-   active: boolean,
-   hash?: {
-      type: boolean,
-      default: false
-   }
-}
-const buttons: Button | any = ref([
+import { NavButton } from '@/types';
+const buttons: NavButton | any = ref([
    { name: "Home", path: "#", active: false, hash: true },
    { name: "About", path: "#about", active: false, hash: true },
    { name: "Skills", path: "#skills", active: false, hash: true },
@@ -20,14 +12,14 @@ const buttons: Button | any = ref([
 
 ])
 const currrentPath: string = window.location.hash
-buttons.value.forEach((button: Button | any, index: number) => {
+buttons.value.forEach((button: NavButton | any, index: number) => {
    if (button.path === currrentPath) {
       buttons.value[index].active = true
    }
 })
 
 const handleActive = (index: number) => {
-   buttons.value.forEach((button: Button | any, i: Number) => {
+   buttons.value.forEach((button: NavButton | any, i: Number) => {
       if (i === index) {
          button.active = true
       } else {
@@ -37,8 +29,8 @@ const handleActive = (index: number) => {
 }
 </script>
 <template>
-   <header class="flex w-full justify-center py-2 absolute mt-10  z-50 transition-colors duration-400 text-base">
-      <nav class="flex gap-5 msm:hidden">
+   <header class="flex w-full justify-center py-2 absolute mt-10 z-50 transition-colors duration-400 text-base">
+      <nav class="flex gap-3 msm:hidden">
          <NavigatorButton @click="handleActive(0)" v-bind="buttons[0]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
