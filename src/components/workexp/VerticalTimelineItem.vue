@@ -17,11 +17,10 @@ onMounted(() => {
 
    if (tilt.value) {
       VanillaTilt.init(tilt.value, {
-         max: 15,
+         max: 10,
          speed: 4000,
          glare: true,
          'max-glare': 0.2,
-         reverse: true,
       });
    }
 });
@@ -36,7 +35,7 @@ onMounted(() => {
          <slot name="icon" />
 
       </div>
-      <div class="vertical-timeline-content p-5 bg-second rounded-[8px] relative w-[45%] text-main" ref="tilt">
+      <div class="vertical-timeline-content p-5  bg-second rounded-[8px] relative w-[45%] text-main" ref="tilt">
          <slot />
       </div>
    </div>
