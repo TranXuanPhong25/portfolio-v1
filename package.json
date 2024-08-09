@@ -24,6 +24,7 @@
     "@heroicons/vue": "^2.1.5",
     "@types/lodash": "^4.17.7",
     "animejs": "^3.2.2",
+    "aos": "^2.3.4",
     "gsap": "^3.12.5",
     "pinia": "^2.1.7",
     "typed.js": "^2.1.0",
