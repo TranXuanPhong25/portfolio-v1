@@ -17,10 +17,11 @@ onMounted(() => {
 
    if (tilt.value) {
       VanillaTilt.init(tilt.value, {
-         max: 25,
-         speed: 400,
+         max: 15,
+         speed: 4000,
          glare: true,
-         'max-glare': 0.5,
+         'max-glare': 0.2,
+         reverse: true,
       });
    }
 });
