@@ -9,7 +9,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
 }
 .maven-pro {
     font-family: "Maven Pro", sans-serif;
@@ -28,4 +28,9 @@ body::-webkit-scrollbar {
     animation: typedjsBlink 0.7s infinite;
     -webkit-animation: typedjsBlink 0.7s infinite;
     animation: typedjsBlink 0.7s infinite;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    display: none;
 }
