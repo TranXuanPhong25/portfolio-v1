@@ -34,3 +34,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar {
     display: none;
 }
+.parallax-tilt-parent {
+    transform-style: preserve-3d;
+}

@@ -1,17 +1,30 @@
 <script setup lang="ts">
 import anime from 'animejs/lib/anime.es.js';
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import silhouette from '@/assets/undraw_personal_info_re_ur1n (1).svg'; // Adjust the path as necessary
 import GetCVButton from '../hero/GetCVButton.vue';
+import VanillaTilt from 'vanilla-tilt';
+const tilt = ref<HTMLElement | null>(null);
 onMounted(() => {
 
-})
+   if (tilt.value) {
+      VanillaTilt.init(tilt.value, {
+         max: 5,
+         speed: 1000,
+         glare: true,
+         'max-glare': 0.1,
+
+      });
+   }
+});
 </script>
 <template>
 
-   <div class="container mx-auto text-left relative p-12 rounded-[25px] z-10 w-[860px] h-[600px] bg-background">
+   <div class="container mx-auto text-left relative p-12 rounded-[25px] z-10 w-[860px] h-[600px] bg-background "
+      ref="tilt">
       <div name="Silhouette"
          class=" absolute z-10 -top-[90px] right-[-10%] w-[65%] h-[65%] select-none pointer-events-none">
+
          <img :src="silhouette" alt="">
       </div>
       <h1 class="text-2xl font-semibold tracking-widest">ABOUT ME</h1>
