@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import VanillaTilt from 'vanilla-tilt';
 defineProps({
    align: {
@@ -30,13 +30,21 @@ onMounted(() => {
       <div class="vertical-timeline-marker">
          <slot name="icon"></slot>
       </div>
-      <div class="vertical-timeline-content" ref="tilt">
+      <div class="vertical-timeline-content p-5 bg-second rounded-[8px] relative w-[45%] text-main" ref="tilt">
          <slot></slot>
       </div>
    </div>
 </template>
 
 <style scoped>
+/* .vertical-timeline-content {
+   padding: 20px;
+   background-color: #456f99;
+   border-radius: 8px;
+   position: relative;
+   width: 45%;
+} */
+
 .vertical-timeline-item-left .vertical-timeline-marker {
    left: 50%;
    margin-left: -12px;
@@ -54,14 +62,6 @@ onMounted(() => {
    background-color: #ff6f61;
    position: absolute;
    top: 0;
-}
-
-.vertical-timeline-content {
-   padding: 20px;
-   background-color: #f8f9fa;
-   border-radius: 8px;
-   position: relative;
-   width: 45%;
 }
 
 .vertical-timeline-item-left .vertical-timeline-content {
