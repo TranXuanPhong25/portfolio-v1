@@ -95,14 +95,14 @@ onUnmounted(() => {
          </h1>
 
          <h1 class="text-7xl text-white font-bold hammersmith-one-regular select-none flex items-center justify-center">
-            <p> I'm &nbsp;</p>
+            <p class="ml-1"> I'm &nbsp;</p>
             <p id="typed"></p>
          </h1>
 
          <!-- <p class="text-xl -mt-2 mb-10 maven-pro flex">
          <p id="typed">
 
-         </p>
+         </p>  
          </p> -->
 
 
