@@ -27,7 +27,7 @@ onMounted(() => {
    <div class="vertical-timeline-item flex mb-12 relative"
       :class="{ 'vertical-timeline-item-left': align === 'left', 'vertical-timeline-item-right': align === 'right' }"
       :data-aos="aos">
-      <div class="vertical-timeline-marker">
+      <div class="vertical-timeline-marker w-6 h-6 rounded-full bg-last absolute top-0">
          <slot name="icon"></slot>
       </div>
       <div class="vertical-timeline-content p-5 bg-second rounded-[8px] relative w-[45%] text-main" ref="tilt">
@@ -37,14 +37,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* .vertical-timeline-content {
-   padding: 20px;
-   background-color: #456f99;
-   border-radius: 8px;
-   position: relative;
-   width: 45%;
-} */
-
 .vertical-timeline-item-left .vertical-timeline-marker {
    left: 50%;
    margin-left: -12px;
@@ -53,15 +45,6 @@ onMounted(() => {
 .vertical-timeline-item-right .vertical-timeline-marker {
    left: 50%;
    margin-left: -12px;
-}
-
-.vertical-timeline-marker {
-   width: 24px;
-   height: 24px;
-   border-radius: 50%;
-   background-color: #ff6f61;
-   position: absolute;
-   top: 0;
 }
 
 .vertical-timeline-item-left .vertical-timeline-content {

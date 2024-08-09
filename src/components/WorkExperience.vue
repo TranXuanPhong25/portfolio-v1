@@ -24,72 +24,24 @@ onMounted(() => {
          <VerticalTimeline>
             <VerticalTimelineItem align="left" aos="fade-up">
                <VerticalTimelineContent>
+                  <h3 class="font-bold text-lg">2025</h3>
+                  <p>Junior Year Student</p>
+               </VerticalTimelineContent>
+            </VerticalTimelineItem>
+
+            <VerticalTimelineItem align="right" aos="fade-up">
+               <VerticalTimelineContent>
+                  <h3 class="font-bold text-lg">2024</h3>
+                  <p>Sophomore Year Student</p>
+               </VerticalTimelineContent>
+            </VerticalTimelineItem>
+
+            <VerticalTimelineItem align="left" aos="fade-up">
+               <VerticalTimelineContent>
                   <h3 class="font-bold text-lg">2023</h3>
-                  <p>Started working as a Senior Developer at XYZ Company.</p>
+                  <p>Fresher Year Student</p>
                </VerticalTimelineContent>
             </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="right" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2021</h3>
-                  <p>Completed Master's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="left" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2019</h3>
-                  <p>Graduated with a Bachelor's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="right" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2021</h3>
-                  <p>Completed Master's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="left" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2019</h3>
-                  <p>Graduated with a Bachelor's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="right" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2021</h3>
-                  <p>Completed Master's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-            <VerticalTimelineItem align="left" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2019</h3>
-                  <p>Graduated with a Bachelor's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="right" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2021</h3>
-                  <p>Completed Master's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-            <VerticalTimelineItem align="left" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2019</h3>
-                  <p>Graduated with a Bachelor's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-
-            <VerticalTimelineItem align="right" aos="fade-up">
-               <VerticalTimelineContent>
-                  <h3 class="font-bold text-lg">2021</h3>
-                  <p>Completed Master's Degree in Computer Science.</p>
-               </VerticalTimelineContent>
-            </VerticalTimelineItem>
-            <!-- Add more timeline items as needed -->
          </VerticalTimeline>
       </div>
    </section>

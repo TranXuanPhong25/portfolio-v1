@@ -1,5 +1,6 @@
 <template>
-   <div class="relative mx-auto px-2 w-full max-w-[960px] vertical-timeline">
+
+   <div class="relative mx-auto py-10  w-full max-w-[960px] vertical-timeline">
       <slot></slot>
    </div>
 </template>
@@ -13,6 +14,6 @@
    transform: translateX(-50%);
    height: 100%;
    width: 4px;
-   background-color: #e9ecef;
+   @apply bg-second;
 }
 </style>
