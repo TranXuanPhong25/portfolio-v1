@@ -4,7 +4,8 @@ import HeroSection from '@/components/HeroSection.vue';
 import AboutSection from '@/components/AboutSection.vue';
 import WorkExperience from '@/components/WorkExperience.vue';
 import SkillsStack from '@/components/SkillsStack.vue';
-
+import ProjectsSection from '@/components/ProjectsSection.vue';
+import ContactSection from '@/components/ContactSection.vue';
 import gsap from 'gsap';
 gsap.to('body', { duration: 0.5, opacity: 1 });
 </script>
@@ -15,4 +16,6 @@ gsap.to('body', { duration: 0.5, opacity: 1 });
    <AboutSection />
    <SkillsStack />
    <WorkExperience />
+   <ProjectsSection />
+   <ContactSection />
 </template>
