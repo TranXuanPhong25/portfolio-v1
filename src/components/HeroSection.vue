@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GetCVButton from './hero/GetCVButton.vue';
 import Typed from 'typed.js';
 import WaveBackground from './hero/WaveBackground.vue';
+import anime from 'animejs/lib/anime.es.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,17 +25,27 @@ onMounted(() => {
       showCursor: true,
       cursorChar: '|',
    });
-   const circles = document.querySelector('.hero-bg');
-   const numCircles = 40;
-   for (let i = 0; i < numCircles; i++) {
-      const circle = document.createElement('div');
-      circle.classList.add('circle');
-      circle.style.animationDelay = `${Math.random() * 2 / 3}s`;
-      circle.style.left = `${Math.random() * 100}%`;
-      circle.style.top = `${Math.random() * 100}%`;
-      circle.style.transform = `scale(${Math.random() + 0.1})`;
-      circles.appendChild(circle);
-   }
+   // const circles = document.querySelector('.hero-bg');
+   // const numCircles = 40;
+   // for (let i = 0; i < numCircles; i++) {
+   //    const circle = document.createElement('div');
+   //    circle.classList.add('circle');
+   //    circle.style.animationDelay = `${Math.random() * 2 / 3}s`;
+   //    circle.style.left = `${Math.random() * 100}%`;
+   //    circle.style.bottom = `${Math.random() * 400 - 300}%`;
+   //    circle.style.transform = `scale(${Math.random() + 0.1})`;
+   //    circles.appendChild(circle);
+   // }
+   anime({
+      targets: '.circle',
+      translateX: () => anime.random(-50, 50) + 'vw',
+      translateY: () => anime.random(-50, 50) + 'vh',
+      scale: () => anime.random(0.5, 1.5),
+      easing: 'easeInOutQuad',
+      duration: 6000,
+      loop: true,
+      direction: 'alternate',
+   });
    ctx = gsap.context((self) => {
       const header = document.querySelector('header');
       gsap.to(header, {
@@ -51,7 +62,6 @@ onMounted(() => {
                header.classList.toggle('top-0')
                // header.classList.toggle('shadow-md')
                header.classList.toggle('bg-background')
-
                // header.classList.toggle('bg-slate-900/40')
                // header.classList.toggle('py-3')
                // header.classList.toggle('backdrop-blur-md')

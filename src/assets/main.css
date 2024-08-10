@@ -37,3 +37,11 @@ body::-webkit-scrollbar {
 .parallax-tilt-parent {
     transform-style: preserve-3d;
 }
+a {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

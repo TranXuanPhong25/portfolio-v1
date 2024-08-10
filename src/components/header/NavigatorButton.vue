@@ -25,7 +25,7 @@ const handleActive = computed(() => {
          </button>
       </div>
    </RouterLink>
-   <a v-else :href="path">
+   <a v-else :href="path" >
       <div class="buttons-navigator duration-300 hover:opacity-100" :class="handleActive">
          <button class="btn-navigator  active:bg-emerald-400/30"><span></span>
             <p data-text="start!" :data-title="name">
