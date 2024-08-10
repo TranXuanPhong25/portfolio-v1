@@ -13,6 +13,6 @@ gsap.to('body', { duration: 0.5, opacity: 1 });
    <HeroSection />
    <SocialBar />
    <AboutSection />
-   <WorkExperience />
    <SkillsStack />
+   <WorkExperience />
 </template>

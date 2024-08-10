@@ -24,7 +24,7 @@ onMounted(() => {
 
 </script>
 <template>
-   <section id="experience" class="py-20 bg-background">
+   <section id="works" class="py-20 bg-background h-screen">
       <div class="container mx-auto text-center">
          <h2 class="text-4xl font-semibold">Work Experience</h2>
          <p class="mt-4 max-w-2xl mx-auto">A timeline of my work experience.</p>

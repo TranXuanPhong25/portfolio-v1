@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
+import FooterSection from './components/FooterSection.vue';
 import gsap from 'gsap'
 // import { onMounted } from 'vue';
 
@@ -35,7 +36,7 @@ document.addEventListener('mousemove', (e) => {
    <HeaderComponent />
    <RouterView />
 
-   <!-- <div class=" min-h-[2 00rem]"></div> -->
+   <FooterSection />
 </template>
 
 <style>
