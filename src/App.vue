@@ -15,15 +15,15 @@ document.addEventListener('mousemove', (e) => {
       opacity: 0
    }, {
       duration: 0.8,
-      x: e.clientX + Math.random() * 50,
-      y: e.clientY + Math.random() * 200 + 100,
+      x: e.clientX + Math.random() * 100 - 50,
+      y: e.clientY + Math.random() * 200 + 50,
       opacity: 1,
-      stagger: 0.01
+      stagger: 0.02
       , onComplete: () => {
-         // setTimeout(() => {
-         //    trails.remove()
-         // }, 1000)
-         trails.remove()
+         setTimeout(() => {
+            trails.remove()
+         }, 200)
+         // trails.remove()
       }
    });
 });
