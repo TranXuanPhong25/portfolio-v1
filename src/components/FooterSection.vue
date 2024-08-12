@@ -2,6 +2,8 @@
 import anime from 'animejs/lib/anime.es.js';
 import { delay } from 'lodash';
 import { onMounted } from 'vue';
+import MailTo from './contact/MailTo.vue';
+
 onMounted(() => {
    anime({
       targets: '[name=tech-used-in-project] svg',
@@ -19,8 +21,9 @@ onMounted(() => {
 </script>
 <template>
    <footer class=" w-screen relative">
-      <div class="w-screen z-0">
-         <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg">
+      <div class="w-screen z-10 ">
+         <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 360" xmlns="http://www.w3.org/2000/svg"
+            class="-translate-y-0">
             <path
                d="M 0,400 L 0,100 C 72.22051282051285,97.83846153846153 144.4410256410257,95.67692307692307 231,86 C 317.5589743589743,76.32307692307693 418.4564102564101,59.130769230769246 499,63 C 579.5435897435899,66.86923076923075 639.7333333333335,91.79999999999998 719,99 C 798.2666666666665,106.20000000000002 896.6102564102564,95.66923076923078 972,105 C 1047.3897435897436,114.33076923076922 1099.825641025641,143.52307692307693 1174,146 C 1248.174358974359,148.47692307692307 1344.0871794871796,124.23846153846154 1440,100 L 1440,400 L 0,400 Z"
                stroke="none" stroke-width="0" fill="#393e46" fill-opacity="0.53"
@@ -28,15 +31,17 @@ onMounted(() => {
             <path
                d="M 0,400 L 0,233 C 54.05641025641026,229.9153846153846 108.11282051282052,226.83076923076922 204,240 C 299.8871794871795,253.16923076923078 437.60512820512827,282.59230769230766 516,274 C 594.3948717948717,265.40769230769234 613.4666666666666,218.80000000000004 680,214 C 746.5333333333334,209.19999999999996 860.5282051282052,246.2076923076923 965,252 C 1069.4717948717948,257.7923076923077 1164.4205128205128,232.36923076923077 1242,224 C 1319.5794871794872,215.63076923076923 1379.7897435897435,224.31538461538463 1440,233 L 1440,400 L 0,400 Z"
                stroke="none" stroke-width="0" fill="#393e46" fill-opacity="1"
-               class="transition-all duration-300 ease-in-out delay-150 path-1 z-0 -translate-y-1   blur-md opacity-90 brightness-[75%]">
+               class="transition-all duration-300 ease-in-out delay-150 path-1 z-[3] -translate-y-1   blur-md opacity-90 brightness-[75%]">
             </path>
             <path
                d="M 0,400 L 0,233 C 54.05641025641026,229.9153846153846 108.11282051282052,226.83076923076922 204,240 C 299.8871794871795,253.16923076923078 437.60512820512827,282.59230769230766 516,274 C 594.3948717948717,265.40769230769234 613.4666666666666,218.80000000000004 680,214 C 746.5333333333334,209.19999999999996 860.5282051282052,246.2076923076923 965,252 C 1069.4717948717948,257.7923076923077 1164.4205128205128,232.36923076923077 1242,224 C 1319.5794871794872,215.63076923076923 1379.7897435897435,224.31538461538463 1440,233 L 1440,400 L 0,400 Z"
                stroke="none" stroke-width="0" fill="#393e46" fill-opacity="1"
-               class="transition-all duration-300 ease-in-out delay-150 path-1 z-10"></path>
+               class="transition-all duration-300 ease-in-out delay-150 path-1 z-30"></path>
 
          </svg>
+         <!-- <MailTo /> -->
       </div>
+      <!-- <MailTo /> -->
       <div class=" bg-second text-main flex items-center justify-center z-10 pb-3">
          <div class="flex justify-between z-20">
             <div class="flex justify-between w-[600px] max-w-[450px]">
