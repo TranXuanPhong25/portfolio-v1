@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import anime from 'animejs/lib/anime.es.js';
+import { delay } from 'lodash';
 import { onMounted } from 'vue';
 onMounted(() => {
    anime({
@@ -9,7 +10,7 @@ onMounted(() => {
       duration: 1400,
       direction: 'alternate',
 
-      delay: anime.stagger(700),
+      delay: anime.stagger(300, { start: 1000 }),
       loop: true,
 
    })
@@ -17,15 +18,32 @@ onMounted(() => {
 })
 </script>
 <template>
-   <footer class=" w-screen">
-      <div class="h-[12vh] bg-second text-main flex items-center justify-center">
-         <div class="flex max-w-[600px] justify-between">
+   <footer class=" w-screen relative">
+      <div class="w-screen z-0">
+         <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg">
+            <path
+               d="M 0,400 L 0,100 C 72.22051282051285,97.83846153846153 144.4410256410257,95.67692307692307 231,86 C 317.5589743589743,76.32307692307693 418.4564102564101,59.130769230769246 499,63 C 579.5435897435899,66.86923076923075 639.7333333333335,91.79999999999998 719,99 C 798.2666666666665,106.20000000000002 896.6102564102564,95.66923076923078 972,105 C 1047.3897435897436,114.33076923076922 1099.825641025641,143.52307692307693 1174,146 C 1248.174358974359,148.47692307692307 1344.0871794871796,124.23846153846154 1440,100 L 1440,400 L 0,400 Z"
+               stroke="none" stroke-width="0" fill="#393e46" fill-opacity="0.53"
+               class="transition-all duration-300 ease-in-out delay-150 path-0 z-0"></path>
+            <path
+               d="M 0,400 L 0,233 C 54.05641025641026,229.9153846153846 108.11282051282052,226.83076923076922 204,240 C 299.8871794871795,253.16923076923078 437.60512820512827,282.59230769230766 516,274 C 594.3948717948717,265.40769230769234 613.4666666666666,218.80000000000004 680,214 C 746.5333333333334,209.19999999999996 860.5282051282052,246.2076923076923 965,252 C 1069.4717948717948,257.7923076923077 1164.4205128205128,232.36923076923077 1242,224 C 1319.5794871794872,215.63076923076923 1379.7897435897435,224.31538461538463 1440,233 L 1440,400 L 0,400 Z"
+               stroke="none" stroke-width="0" fill="#393e46" fill-opacity="1"
+               class="transition-all duration-300 ease-in-out delay-150 path-1 z-0 -translate-y-1   blur-md opacity-90 brightness-[75%]">
+            </path>
+            <path
+               d="M 0,400 L 0,233 C 54.05641025641026,229.9153846153846 108.11282051282052,226.83076923076922 204,240 C 299.8871794871795,253.16923076923078 437.60512820512827,282.59230769230766 516,274 C 594.3948717948717,265.40769230769234 613.4666666666666,218.80000000000004 680,214 C 746.5333333333334,209.19999999999996 860.5282051282052,246.2076923076923 965,252 C 1069.4717948717948,257.7923076923077 1164.4205128205128,232.36923076923077 1242,224 C 1319.5794871794872,215.63076923076923 1379.7897435897435,224.31538461538463 1440,233 L 1440,400 L 0,400 Z"
+               stroke="none" stroke-width="0" fill="#393e46" fill-opacity="1"
+               class="transition-all duration-300 ease-in-out delay-150 path-1 z-10"></path>
 
-            <div class="flex justify-between min-w-[600px]">
+         </svg>
+      </div>
+      <div class=" bg-second text-main flex items-center justify-center z-10 pb-3">
+         <div class="flex justify-between z-20">
+            <div class="flex justify-between w-[600px] max-w-[450px]">
 
                <div class="flex-row  items-center justify-center">
                   <div class="flex " name="tech-used-in-project">
-                     <a href="https://vuejs.org/" target="_blank" class="mx-1">
+                     <a href="https://vuejs.org/" target="_blank" class="mr   -2">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60"
                            viewBox="0 0 48 48">
                            <polygon fill="#81c784" points="23.987,17 18.734,8 2.974,8 23.987,44 45,8 29.24,8"></polygon>
@@ -33,7 +51,7 @@ onMounted(() => {
                            </polygon>
                         </svg>
                      </a>
-                     <a href="https://vitejs.dev/" target="_blank" class="mx-1">
+                     <a href="https://vitejs.dev/" target="_blank" class="mx-2">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60"
                            viewBox="0 0 48 48">
                            <linearGradient id="oOTIjsOjTqJdvfy5S4iCZa_dJjTWMogzFzg_gr1" x1="13.315" x2="38.005"
@@ -56,7 +74,7 @@ onMounted(() => {
                            </path>
                         </svg>
                      </a>
-                     <a href="https://tailwindcss.com/" target="_blank" class="mx-1">
+                     <a href="https://tailwindcss.com/" target="_blank" class="mx-2">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60"
                            viewBox="0 0 48 48">
                            <path fill="#00acc1"
@@ -69,9 +87,10 @@ onMounted(() => {
                </div>
                <div class="flex-col items-center justify-center h-full">
 
-                  <div class="button-container h-[60px]">
-                     <a href="https://github.com/TranXuanPhong25" target="_blank" class="button flex-center">
-                        <svg svg viewBox="0 0 20 20" width="22px" class="btn-svg" version="1.1"
+                  <div class="button-container h-[60px] ">
+                     <a href="https://github.com/TranXuanPhong25" target="_blank"
+                        class="button flex-center bg-[#2d2e32]">
+                        <svg svg viewBox="0 0 20 20" width="24" class="btn-svg" version="1.1"
                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff"
                            stroke="#fff">
                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -93,8 +112,8 @@ onMounted(() => {
                            </g>
                         </svg>
                      </a>
-                     <button class="button flex-center">
-                        <svg class="btn-svg" viewBox="0 0 24 24" height="24" width="24"
+                     <button class="button flex-center bg-[#0a66c2]">
+                        <svg class="btn-svg " viewBox="0 0 24 24" height="24" width="24"
                            xmlns="http://www.w3.org/2000/svg" fill="white">
                            <path
                               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
@@ -102,7 +121,7 @@ onMounted(() => {
                         </svg>
                      </button>
                      <a href="https://www.facebook.com/xuanphong.tran.16940/" target="_blank"
-                        class="button flex-center">
+                        class="button flex-center bg-[#0866ff]">
                         <svg class="btn-svg" viewBox="0 0 320 512" height="1.3em" xmlns="http://www.w3.org/2000/svg"
                            fill="white">
                            <path
@@ -133,11 +152,10 @@ onMounted(() => {
    cursor: pointer;
    text-decoration: none;
    color: #ffff;
-   width: 40px;
-   height: 40px;
+   width: 45px;
+   height: 45px;
    border-radius: 50%;
-   background-color: #2d2e32;
-   border: 2px solid #2d2e32;
+   /* border: 2px solid #2d2e32; */
    transition: all 0.45s;
 }
 
