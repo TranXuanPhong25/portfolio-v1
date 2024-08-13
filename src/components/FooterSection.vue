@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import anime from 'animejs/lib/anime.es.js';
-import { delay } from 'lodash';
 import { onMounted } from 'vue';
-import MailTo from './contact/MailTo.vue';
 
 onMounted(() => {
    anime({

@@ -2,7 +2,7 @@
 import SocialButton from './SocialButton.vue';
 </script>
 <template>
-   <div class="flex-col absolute right-20 bottom-1/3    msm:hidden">
+   <div class="flex-col absolute right-20 bottom-1/3 msm:hidden">
       <a href="https://github.com/TranXuanPhong25" target="_blank" rel="noopener noreferrer">
          <SocialButton color="bg-[#fff]">
             <svg fill="black" viewBox="0 0 496 512" height="1.6em">
