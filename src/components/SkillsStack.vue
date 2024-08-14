@@ -1,11 +1,12 @@
 <template>
-   <section class="w-screen h-screen" id="skills">
+   <section class="w-screen h-screen flex justify-center items-center" id="skills">
       <div ref="container" class="icon-cloud"></div>
    </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -14,52 +15,60 @@ const container = ref(null);
 
 const initThreeJS = () => {
    const scene = new THREE.Scene();
-   const camera = new THREE.PerspectiveCamera(75, container.value.clientWidth / container.value.clientHeight, 0.1, 1000);
+   const camera = new THREE.PerspectiveCamera(45, container.value.clientWidth / container.value.clientHeight, 0.1, 1000);
    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
    renderer.setSize(container.value.clientWidth, container.value.clientHeight);
    container.value.appendChild(renderer.domElement);
 
+   // Create OrbitControls for user interaction
    const controls = new OrbitControls(camera, renderer.domElement);
-   controls.enableDamping = true;
-   controls.dampingFactor = 0.1;
-   controls.rotateSpeed = 0.5;
+   controls.enableDamping = true; // Smooth rotation
+   controls.dampingFactor = 0.25; // Higher value for smoother rotation
+   controls.minDistance = 3; // Limit how close you can zoom in
+   controls.maxDistance = 10; // Limit how far you can zoom out
+   controls.enablePan = false; // Disable panning to keep the focus on rotation
+   controls.rotateSpeed = 0.3; // Rotation speed
 
-   const radius = 3;
+   const radius = 2;
    const icons = [];
 
+   // const geometry = new THREE.BoxGeometry();
+   // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+   // const cube = new THREE.Mesh(geometry, material);
+   // scene.add(cube);
    const iconTextures = [
-      "/vue-icon-512x512-ne4r9aa8.png",
-      "/vue-icon-512x512-ne4r9aa8.png",
-      "/vue-icon-512x512-ne4r9aa8.png",
-      "/vue-icon-512x512-ne4r9aa8.png",
+      "/icons8-c-144.png",
+      "/icons8-vue-js-144.png",
+      "/icons8-nodejs-144.png",
+      "/icons8-tailwind-css-144.png",
+      "/icons8-java-144.png",
+      "/icons8-git-144.png",
+      "/icons8-javascript-144.png",
+      "/icons8-html-5-96.png",
+      "/icons8-css3-144.png",
+      "/icons8-taildinwind-css-144.png",
+      "/icons8-typescript-144.png",
+      "/icons8-unity-144.png",
+      "/icons8-ubuntu-96.png",
 
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-      "/vue-icon-512x512-ne4r9aa8.png",
-
-
-
-      // add more icon paths here
    ];
 
    iconTextures.forEach((texturePath, index) => {
-      const texture = new THREE.TextureLoader().load(texturePath);
-      const material = new THREE.SpriteMaterial({ map: texture });
+      const texture = new THREE.TextureLoader().load(texturePath, (texture) => {
+         // Ensure the texture is loaded correctly
+         texture.encoding = THREE.sRGBEncoding;
+      });
+
+      const material = new THREE.SpriteMaterial({
+         map: texture,
+         color: 0xffffff, // Ensure the material color is white to not affect the texture color
+      });
+
       const sprite = new THREE.Sprite(material);
 
-      // Distribute sprites in 3D space using spherical coordinates
-      const theta = Math.acos(2 * Math.random() - 1);  // Angle in Z
-      const phi = Math.random() * 2 * Math.PI;        // Angle in X-Y plane
+      // Generate position for each sprite on line using specific formula
+      const phi = Math.random() * Math.PI * 2;
+      const theta = Math.random() * Math.PI * 2;
 
       sprite.position.set(
          radius * Math.sin(theta) * Math.cos(phi),
@@ -67,18 +76,11 @@ const initThreeJS = () => {
          radius * Math.cos(theta)
       );
 
-      sprite.scale.set(0.5, 0.5, 0.5); // Initial scale
+      sprite.scale.set(0.7, 0.7, 0.7); // Initial scale
 
       sprite.userData = { originalScale: sprite.scale.clone() };
 
-      // Hover effect
-      sprite.onBeforeRender = () => {
-         const distance = sprite.position.distanceTo(camera.position);
-         sprite.scale.setScalar(1 / distance); // Size adjusts based on distance from the camera
-      };
-
-      // Store the sprite and add it to the scene
-      icons.push(sprite);
+      // Add sprite to the scene
       scene.add(sprite);
    });
 
@@ -86,34 +88,86 @@ const initThreeJS = () => {
 
    // Mouse movement effect
    let mouseX = 0, mouseY = 0;
-   document.addEventListener('mousemove', (event) => {
+
+   container.value.addEventListener('mousemove', (event) => {
       mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
    });
 
+   const updateSpriteScale = () => {
+      icons.forEach(sprite => {
+         //set scale of sprite respective to the camera distance to the sprite
+         const scale = sprite.position.distanceTo(camera.position) / 5;
+
+         sprite.scale.set(scale, scale, scale);
+      });
+   };
    const animate = () => {
+
       requestAnimationFrame(animate);
 
       // Rotate the entire group of icons based on mouse movement
       scene.rotation.x += (mouseY * 0.05 - scene.rotation.x) * 0.1;
       scene.rotation.y += (mouseX * 0.05 - scene.rotation.y) * 0.1;
 
+
+
+      updateSpriteScale();
       controls.update();
       renderer.render(scene, camera);
    };
 
    animate();
+
+};
+// Handle window resizing to keep the aspect ratio correct
+const onWindowResize = () => {
+   camera.aspect = container.value.clientWidth / container.value.clientHeight;
+   camera.updateProjectionMatrix();
+   renderer.setSize(container.value.clientWidth, container.value.clientHeight);
 };
 
+// Clean up the event listener when the component is unmounted
+onBeforeUnmount(() => {
+   window.removeEventListener('resize', onWindowResize);
+});
+
 onMounted(() => {
+   container.value.addEventListener('mousedown', () => {
+      container.value.style.cursor = 'grabbing';
+   });
+   container.value.addEventListener('mouseup', () => {
+      container.value.style.cursor = 'grab';
+   });
    initThreeJS();
 });
 </script>
 
-<style scoped>
+<style>
 .icon-cloud {
-   width: 100%;
-   height: 100%;
+   width: 40vw;
+   height: 40vw;
+   /* background: radial-gradient(circle at center, #222831, #393e46); */
    position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   z-index: 30;
+   border-radius: 50%;
+   cursor: grab;
 }
+
+/* Add a soft shadow to the container to give it more depth */
+/* .icon-cloud:before {
+   content: "";
+   position: absolute;
+   width: 120%;
+   height: 120%;
+   border-radius: 50%;
+   background: radial-gradient(circle at center, #222831, transparent);
+   z-index: 0;
+   filter: blur(20px);
+} */
 </style>
