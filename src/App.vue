@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterSection from './components/FooterSection.vue';
+import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 // import { onMounted } from 'vue';
 
@@ -27,16 +28,26 @@ document.addEventListener('mousemove', (e) => {
       }
    });
 });
-
+const windowSize = ref<number>(window.innerWidth);
+onMounted(() => {
+   window.addEventListener('resize', () => {
+      windowSize.value = window.innerWidth;
+   });
+});
 
 </script>
 
 <template>
 
-   <HeaderComponent />
-   <RouterView />
+   <div v-if="windowSize < 1000">
+      My App currently doesn't support mobile view. Please view it on a desktop.
+   </div>
+   <template v-else>
+      <HeaderComponent />
+      <RouterView />
 
-   <FooterSection />
+      <FooterSection />
+   </template>
 </template>
 
 <style>
