@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GetCVButton from './hero/GetCVButton.vue';
 import Typed from 'typed.js';
 import WaveBackground from './hero/WaveBackground.vue';
+import SocialBar from '@/components/hero/SocialBar.vue';
+
 import anime from 'animejs/lib/anime.es.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -61,7 +63,7 @@ onMounted(() => {
                header.classList.toggle('fixed')
                header.classList.toggle('top-0')
                // header.classList.toggle('shadow-md')
-               header.classList.toggle('bg-background')
+               header.classList.toggle('bg-background/80')
                // header.classList.toggle('bg-slate-900/40')
                // header.classList.toggle('py-3')
                // header.classList.toggle('backdrop-blur-md')
@@ -72,7 +74,7 @@ onMounted(() => {
                header.classList.toggle('fixed')
                header.classList.toggle('top-0')
                // header.classList.toggle('shadow-md')
-               header.classList.toggle('bg-background')
+               header.classList.toggle('bg-background/80')
                // header.classList.toggle('bg-slate-900/40')
                // header.classList.toggle('py-3')
                // header.classList.toggle('backdrop-blur-md')
@@ -94,6 +96,7 @@ onUnmounted(() => {
    <section class="w-full h-screen flex items-center justify-center hero-bg relative" ref="main">
 
 
+      <SocialBar />
 
       <img src="/version-control-concept-illustration.png" width="860px"
          class="z-10 -m-12 select-none pointer-events-none "
