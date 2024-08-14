@@ -1,4 +1,8 @@
+<script setup lang="ts">
+
+</script>
 <template>
+
    <section id="projects">
       <div class="flex w-full p-[10%] box-border h-screen">
          <div class="box">
@@ -57,4 +61,6 @@
    width: 100%;
    height: 100%;
 }
+
 </style>
+
