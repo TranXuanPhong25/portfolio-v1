@@ -5,15 +5,15 @@ const projectsData = [
       title: 'Game Development',
       description: 'My first game project as an assignment in first year of university',
       image: '/img/project/overheaven.png',
-      repo: '',
-      demo: '',
+      repo: 'https://github.com/TranXuanPhong25/Over-Heaven',
+      demo: 'https://www.youtube.com/watch?v=Di--rG62d9g',
    },
    {
       title: 'Web Development',
       description: 'My first Portfolio website',
       image: '/img/project/portfoliov1.png',
-      repo: '',
-      demo: '',
+      repo: 'https://github.com/TranXuanPhong25/portfolio',
+      demo: 'https://tranxuanphong25.github.io/portfolio/',
 
    }
 
