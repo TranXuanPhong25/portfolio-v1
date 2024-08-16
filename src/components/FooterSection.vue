@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 <template>
 
-  
+
    <footer class=" w-screen relative">
       <div class="w-screen z-10 ">
          <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 360" xmlns="http://www.w3.org/2000/svg"
@@ -143,8 +143,10 @@ onMounted(() => {
             </div>
          </div>
       </div>
-       <a target="_blank" href="https://icons8.com/icon/13679/java">Java</a> icon by <a target="_blank"
-      href="https://icons8.com">Icons8</a>
+      <div class="bg-second w-screen text-center">
+
+         <a target="_blank" href="https://icons8.com/">Icon by Icons8.com</a>
+      </div>
    </footer>
 </template>
 <style scoped>
@@ -183,4 +185,3 @@ onMounted(() => {
    align-items: center;
 }
 </style>
-
