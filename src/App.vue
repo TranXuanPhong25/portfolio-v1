@@ -4,6 +4,8 @@ import HeaderComponent from './components/HeaderComponent.vue'
 import FooterSection from './components/FooterSection.vue';
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
+import 'aos/dist/aos.css';
+
 // import { onMounted } from 'vue';
 
 document.addEventListener('mousemove', (e) => {

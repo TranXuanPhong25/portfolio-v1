@@ -28,6 +28,7 @@
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
     "pinia": "^2.1.7",
+    "smooth-scrollbar": "^8.8.4",
     "three": "^0.167.1",
     "typed.js": "^2.1.0",
     "vanilla-tilt": "^1.8.1",
