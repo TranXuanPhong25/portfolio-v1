@@ -47,9 +47,9 @@ onMounted(() => {
                <img :src="project.image" alt="project image" class=" w-full  group-hover:brightness-50 duration-300 ">
                <div class="">
                   <a :href="project.demo" target="_blank"
-                     class="border-2 border-main  text-2xl text-white bg-primary rounded-lg p-2 m-2 group-hover:top-[29%] top-[90%] left-[50%] translate-x-[-50%] absolute  duration-300">Demo</a>
+                     class="border-2 border-main  text-2xl text-white bg-primary rounded-md p-2 m-2 group-hover:top-[25%] top-[90%] left-[50%] translate-x-[-50%] absolute  duration-300 hover:bg-main hover:text-white">Demo</a>
                   <a :href="project.repo" target="_blank"
-                     class="border-2 border-main  text-2xl text-white bg-primary rounded-lg p-2 m-2 group-hover:top-[35%] top-[90%] left-[50%] translate-x-[-50%] absolute  duration-300">View
+                     class="border-2 border-main  text-2xl text-white bg-primary rounded-md p-2 m-2 group-hover:top-[calc(25%+55px)] top-[90%] left-[50%] translate-x-[-50%] absolute  duration-300 hover:bg-main hover:text-white">View
                      source</a>
                </div>
             </div>
