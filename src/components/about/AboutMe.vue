@@ -1,0 +1,85 @@
+<script setup lang="ts">
+import anime from 'animejs/lib/anime.es.js';
+import { ref, onMounted } from 'vue';
+import silhouette from '@/assets/undraw_personal_info_re_ur1n (1).svg'; // Adjust the path as necessary
+import GetCVButton from '../hero/GetCVButton.vue';
+import VanillaTilt from 'vanilla-tilt';
+const tilt = ref<HTMLElement | null>(null);
+onMounted(() => {
+
+   if (tilt.value) {
+      VanillaTilt.init(tilt.value, {
+         max: 5,
+         speed: 1000,
+         glare: true,
+         'max-glare': 0.1,
+
+      });
+   }
+});
+</script>
+<template>
+
+   <div class="container mx-auto text-left relative p-12 rounded-[25px] z-10 w-[860px] h-[600px] bg-background "
+      ref="tilt">
+      <div name="Silhouette"
+         class=" absolute z-10 -top-[90px] right-[-10%] w-[65%] h-[65%] select-none pointer-events-none">
+
+         <img :src="silhouette" alt="">
+      </div>
+      <h1 class="text-2xl font-semibold tracking-widest">ABOUT ME</h1>
+      <h1 class="text-7xl font-bold text-last">PROFILE</h1>
+
+      <div class="w-full h-1 bg-second/50 my-7  rounded-full"></div>
+      <p class="text-xl my-7 text-justify">
+         I'm a junior year Computer Science major at the University of Engineering and Technology in Vietnam, with a
+         strong passion for full-stack development.
+         I specialize in building beautiful and functional websites.
+      </p>
+      <div class="w-full h-1 bg-second/50 my-7  rounded-full"></div>
+
+      <div class="w-full mx-auto p-1 text-lg">
+         <div class="grid grid-cols-11 gap-4">
+            <!-- First Column -->
+            <div class="space-y-4 col-span-5">
+               <div class=" grid grid-cols-7 ">
+                  <span class=" col-span-3 font-semibold text-gray-600">Fullname</span>
+                  <span class="text-main col-span-4">Tran Xuan Phong</span>
+               </div>
+               <div class=" grid grid-cols-7">
+                  <span class=" col-span-3 font-semibold text-gray-600">Age</span>
+                  <span class="text-main col-span-4">19 Years</span>
+               </div>
+               <div class=" grid grid-cols-7">
+                  <span class=" col-span-3 font-semibold text-gray-600">Occupation</span>
+                  <span class="text-main col-span-4">Fullstacks Developer</span>
+               </div>
+            </div>
+
+            <!-- Second Column -->
+            <div class=" space-y-4 col-span-4">
+               <div class="grid grid-cols-2">
+                  <span class="font-semibold text-gray-600">Email</span>
+                  <span class="text-main">tranxuanphong26525@gmail.com</span>
+               </div>
+               <div class="grid grid-cols-2">
+                  <span class="font-semibold text-gray-600">Address</span>
+                  <span class="text-main">Hanoi, Vietnam</span>
+               </div>
+               <div class="grid grid-cols-2">
+                  <span class="font-semibold text-gray-600">Experience</span>
+                  <span class="text-main">Under one year</span>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <GetCVButton buttonLink="#about" buttonText="Download My CV">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="size-6 animate-bounce">
+            <path stroke-linecap="round" stroke-linejoin="round"
+               d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+         </svg>
+      </GetCVButton>
+   </div>
+</template>

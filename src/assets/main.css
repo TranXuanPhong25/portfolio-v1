@@ -6,11 +6,11 @@ html {
 }
 body {
     @apply bg-background;
-    font-family: "Poppins", sans-serif;
+    position: relative;
 }
 
 body::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
 }
 .maven-pro {
     font-family: "Maven Pro", sans-serif;
@@ -29,4 +29,20 @@ body::-webkit-scrollbar {
     animation: typedjsBlink 0.7s infinite;
     -webkit-animation: typedjsBlink 0.7s infinite;
     animation: typedjsBlink 0.7s infinite;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    display: none;
+}
+.parallax-tilt-parent {
+    transform-style: preserve-3d;
+}
+a {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
