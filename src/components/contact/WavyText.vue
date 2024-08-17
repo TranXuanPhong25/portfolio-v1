@@ -15,7 +15,6 @@ onMounted(() => {
    for (let i = 1; i < words.value.length; i++) {
       suffixSumIndex.value[i] = words.value[i].length + suffixSumIndex.value[i - 1];
    }
-   console.log(suffixSumIndex.value);
 })
 </script>
 <template>
