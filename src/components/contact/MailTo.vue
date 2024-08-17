@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import WavyText from './WavyText.vue';
+
+</script>
 <template>
 
    <span class="wrapper absolute top-0 right-1/2 translate-x-1/2 ">
@@ -17,9 +21,11 @@
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com" target="_blank"
          class="flex justify-center items-center bg-sescond  absolute top-1/2 p-5 z-30 -translate-y-1/2   ">
          <!-- https://uiverse.io/profile/barisdogansutcu -->
-         <button class="download-button">
-            <div class="docs"> Get in touch</div>
-            <div class="download">
+         <button class="mail-button">
+            <div class="docs">
+               <WavyText text="GET IN TOUCH" />
+            </div>
+            <div class="mail">
                <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="1"
                   stroke="currentColor" height="48" width="48" viewBox="0 0 24 24">
                   <path
@@ -114,7 +120,7 @@
    }
 }
 
-.download-button {
+.mail-button {
    position: relative;
    border-width: 0;
    color: white;
@@ -127,13 +133,13 @@
 
 }
 
-.download-button .docs {
+.mail-button .docs {
    display: flex;
    align-items: center;
    justify-content: space-between;
    gap: 10px;
    min-height: 40px;
-   padding: 10px 20px;
+   padding: 5px 10px;
    border-radius: 4px;
    z-index: 1;
    background-color: #242a35;
@@ -142,7 +148,7 @@
 }
 
 
-.download {
+.mail {
    position: absolute;
    inset: 0;
    display: flex;
@@ -158,16 +164,16 @@
    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.download-button:hover .download {
+.mail-button:hover .mail {
    transform: translateY(-90%);
-   width: 90px;
+   width: 80%;
    /* height: 90px; */
    /* border-radius: 50%; */
 
 }
 
-.download svg,
-.download svg {
+.mail svg,
+.mail svg {
    animation: docs 1s infinite;
 }
 
