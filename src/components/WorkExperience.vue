@@ -26,8 +26,8 @@ onMounted(() => {
 <template>
    <section id="works" class="py-20 bg-background h-screen">
       <div class="container mx-auto text-center">
-         <h2 class="text-4xl font-semibold">Work Experience</h2>
-         <p class="mt-4 max-w-2xl mx-auto">A timeline of my work experience.</p>
+         <h2 class="text-7xl font-semibold ">Work Experience</h2>
+         <p class="mt-4 max-w-2xl mx-auto text-xl">A timeline of my work experience.</p>
       </div>
       <div class="py-16 mx-auto px-4">
          <VerticalTimeline>
