@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GetCVButton from './hero/GetCVButton.vue';
 import Typed from 'typed.js';
+import HeroIllustration from './hero/HeroBrainstormSVG.vue';
 import WaveBackground from './hero/WaveBackground.vue';
 import SocialBar from '@/components/hero/SocialBar.vue';
 
@@ -98,6 +99,13 @@ onUnmounted(() => {
 
       <SocialBar />
 
+
+      <!-- <img src="/version-control-concept-illustration.png" width="860px" class="-m-12 select-none pointer-events-none "
+         alt="https://www.freepik.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_25273349.htm#fromView=search&page=1&position=21&uuid=3e1c36d6-1a12-4393-a1b3-a90a3f2b353b">
+     
+      <!-- <HeroIllustration class="-m-12 select-none pointer-events-none " /> -->
+      <HeroIllustration class="select-none pointer-events-none w[600px] h-[600px] -m-14 " />
+      -->
       <img src="/version-control-concept-illustration.png" width="860px"
          class="z-10 -m-12 select-none pointer-events-none "
          alt="https://www.freepik.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_25273349.htm#fromView=search&page=1&position=21&uuid=3e1c36d6-1a12-4393-a1b3-a90a3f2b353b">
@@ -152,5 +160,54 @@ onUnmounted(() => {
    mix-blend-mode: screen;
    z-index: 10;
 
+}
+
+svg#freepik_stories-version-control:not(.animated) .animable {
+   opacity: 0;
+}
+
+svg#freepik_stories-version-control.animated #freepik--Window--inject-9 {
+   animation: 3s Infinite linear floating;
+   animation-delay: 0s;
+}
+
+svg#freepik_stories-version-control.animated #freepik--Graphics--inject-9 {
+   animation: 1.5s Infinite linear floating;
+   animation-delay: 0s;
+}
+
+svg#freepik_stories-version-control.animated #freepik--Character--inject-9 {
+   animation: 1.5s Infinite linear wind;
+   animation-delay: 0s;
+}
+
+@keyframes floating {
+   0% {
+      opacity: 1;
+      transform: translateY(0px);
+   }
+
+   50% {
+      transform: translateY(-10px);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}
+
+@keyframes wind {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   25% {
+      transform: rotate(1deg);
+   }
+
+   75% {
+      transform: rotate(-1deg);
+   }
 }
 </style>
