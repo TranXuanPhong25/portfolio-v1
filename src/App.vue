@@ -36,7 +36,9 @@ onMounted(() => {
       windowSize.value = window.innerWidth;
    });
 });
-
+document.addEventListener('hashchange', () => {
+   console.log('hash changed');
+});
 </script>
 
 <template>

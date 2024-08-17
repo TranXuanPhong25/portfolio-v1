@@ -21,7 +21,7 @@ onMounted(() => {
 
 
    <footer class=" w-screen relative">
-      <div class="w-screen z-10 ">
+      <div class="w-screen z-10 " data-aos="fade-up">
          <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 360" xmlns="http://www.w3.org/2000/svg"
             class="-translate-y-0">
             <path

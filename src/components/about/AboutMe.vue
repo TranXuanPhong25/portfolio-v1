@@ -21,8 +21,8 @@ onMounted(() => {
 <template>
 
    <div class="container mx-auto text-left relative p-12 rounded-[25px] z-10 w-[860px] h-[600px] bg-background "
-      ref="tilt">
-      <div name="Silhouette"
+      ref="tilt" data-aos="zoom-in-up">
+      <div name="Silhouette" data-aos="fade-up"
          class=" absolute z-10 -top-[90px] right-[-10%] w-[65%] h-[65%] select-none pointer-events-none">
 
          <img :src="silhouette" alt="">

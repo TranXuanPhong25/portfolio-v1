@@ -1,18 +1,18 @@
 <template>
    <section class="w-screen h-screen flex justify-center items-center relative" id="skills">
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-5%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[10%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[25%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[40%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[55%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[70%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-3%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[12%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[27%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[42%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[57%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[72%] opacity-30" />
       <!-- <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[85%]" /> -->
 
 
 
 
 
-      <div ref="container" class="icon-cloud"></div>
+      <div ref="container" class="icon-cloud" data-aos="zoom-in-down"></div>
 
    </section>
 </template>
@@ -33,7 +33,7 @@
 </style>
 
 <script setup lang="ts">
-import SkillMarquee from './SkillMarquee.vue';
+import SkillMarquee from './skill/SkillMarquee.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
