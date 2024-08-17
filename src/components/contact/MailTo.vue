@@ -4,7 +4,7 @@ import WavyText from './WavyText.vue';
 </script>
 <template>
 
-   <span class="wrapper absolute top-0 right-1/2 translate-x-1/2 ">
+   <span class="wrapper absolute top-0 right-1/2 translate-x-1/2">
       <span class=" span-text-1">
          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com" target="_blank">
             Mail
