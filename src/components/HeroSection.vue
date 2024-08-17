@@ -102,14 +102,14 @@ onUnmounted(() => {
 
       <!-- <img src="/version-control-concept-illustration.png" width="860px" class="-m-12 select-none pointer-events-none "
          alt="https://www.freepik.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_25273349.htm#fromView=search&page=1&position=21&uuid=3e1c36d6-1a12-4393-a1b3-a90a3f2b353b">
-     
-      <!-- <HeroIllustration class="-m-12 select-none pointer-events-none " /> -->
-      <HeroIllustration class="select-none pointer-events-none w[600px] h-[600px] -m-14 " />
-      -->
-      <img src="/version-control-concept-illustration.png" width="860px"
+         -->
+
+      <!-- <HeroIllustration class="-m-12 select-none pointer-events-none " />  -->
+      <HeroIllustration class="select-none pointer-events-none w[600px] h-[600px] -m-14 z-10" />
+      <!-- <img src="/version-control-concept-illustration.png" width="860px"
          class="z-10 -m-12 select-none pointer-events-none "
          alt="https://www.freepik.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_25273349.htm#fromView=search&page=1&position=21&uuid=3e1c36d6-1a12-4393-a1b3-a90a3f2b353b">
-      <a class="absolute bottom-0" href="https://storyset.com/work">Work illustrations by Storyset</a>
+      <a class="absolute bottom-0" href="https://storyset.com/work">Work illustrations by Storyset</a> -->
 
       <div class=" ml-20  w-[590px] z-10 relative  ">
          <h1 class="text-3xl font-bold flex items-center ">
