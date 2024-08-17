@@ -144,8 +144,9 @@ onMounted(() => {
          </div>
       </div>
       <div class="bg-second w-screen text-center">
+         <a target="_blank" class="block" href="https://icons8.com/">Icon by Icons8.com</a>
+         <a target="_blank" class="block" href="https://www.freepik.com/">Image by freepik.com</a>
 
-         <a target="_blank" href="https://icons8.com/">Icon by Icons8.com</a>
       </div>
    </footer>
 </template>
