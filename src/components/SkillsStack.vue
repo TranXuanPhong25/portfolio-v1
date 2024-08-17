@@ -1,11 +1,39 @@
 <template>
-   <section class="w-screen h-screen flex justify-center items-center " id="skills">
+   <section class="w-screen h-screen flex justify-center items-center relative" id="skills">
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-5%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[10%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[25%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[40%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[55%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[70%] opacity-30" />
+      <!-- <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[85%]" /> -->
+
+
+
+
+
       <div ref="container" class="icon-cloud"></div>
+
    </section>
 </template>
+<style>
+.icon-cloud {
+   backdrop-filter: blur(10px) brightness(0.8);
+   width: 40vw;
+   height: 40vw;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   z-index: 30;
+   border-radius: 50%;
+   cursor: grab;
+}
+</style>
 
 <script setup lang="ts">
-
+import SkillMarquee from './SkillMarquee.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -17,7 +45,6 @@ const iconTextures = [
    "/icons8-c-144.png",
    "/icons8-vue-js-144.png",
    "/icons8-nodejs-144.png",
-   "/icons8-tailwind-css-144.png",
    "/icons8-java-144.png",
    "/icons8-git-144.png",
    "/icons8-javascript-144.png",
@@ -42,8 +69,8 @@ const initThreeJS = () => {
    const controls = new OrbitControls(camera, renderer.domElement);
    controls.enableDamping = true; // Smooth rotation
    controls.dampingFactor = 0.25; // Higher value for smoother rotation
-   controls.minDistance = 3; // Limit how close you can zoom in
-   controls.maxDistance = 10; // Limit how far you can zoom out
+   controls.minDistance = 5; // Limit how close you can zoom in
+   controls.maxDistance = 7; // Limit how far you can zoom out
    controls.enablePan = false; // Disable panning to keep the focus on rotation
    controls.rotateSpeed = 0.3; // Rotation speed
 
@@ -68,12 +95,13 @@ const initThreeJS = () => {
       const material = new THREE.SpriteMaterial({
          map: texture,
          color: 0xffffff,
+
       });
 
       const sprite = new THREE.Sprite(material);
       // Generate position for each sprite on line using specific formula
       const phi = (index / iconTextures.length) * Math.PI * 2;
-      const theta = Math.acos(-1 + (2 * index) / iconTextures.length);
+      const theta = Math.random() * Math.PI + 0.01;
       sprite.position.set(
          radius * Math.sin(theta) * Math.cos(phi),
          radius * Math.sin(theta) * Math.sin(phi),
@@ -108,7 +136,7 @@ const initThreeJS = () => {
       // Rotate the entire group of icons based on mouse movement
       scene.rotation.x += (mouseY * 0.05 - scene.rotation.x) * 0.2;
       scene.rotation.y += (mouseX * 0.05 - scene.rotation.y) * 0.2;
-      scene.rotation.z += 0.01;
+      scene.rotation.z += 0.005;
 
       controls.update();
       renderer.render(scene, camera);
@@ -139,18 +167,3 @@ onMounted(() => {
    initThreeJS();
 });
 </script>
-
-<style>
-.icon-cloud {
-   width: 40vw;
-   height: 40vw;
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   overflow: hidden;
-   z-index: 30;
-   border-radius: 50%;
-   cursor: grab;
-}
-</style>
