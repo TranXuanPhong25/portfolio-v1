@@ -41,21 +41,22 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // Reference to the container div
 const container = ref(null);
 const iconTextures = [
-   "",
-   "/icons8-c-144.png",
-   "/icons8-vue-js-144.png",
-   "/icons8-nodejs-144.png",
-   "/icons8-java-144.png",
-   "/icons8-git-144.png",
-   "/icons8-javascript-144.png",
-   "/icons8-html-96.png",
-   "/icons8-css-144.png",
-   "/icons8-tailwind-css-144.png",
-   "/icons8-typescript-144.png",
-   "/icons8-unity-144.png",
-   "/icons8-ubuntu-96.png",
-   "/icons8-c-sharp-logo-144.png",
-   "/icons8-postgresql-144.png",
+   "/img/skill/icons8-c-144.png",
+   "/img/skill/icons8-vue-js-144.png",
+   "/img/skill/icons8-nodejs-144.png",
+   "/img/skill/icons8-java-144.png",
+   "/img/skill/icons8-git-144.png",
+   "/img/skill/icons8-javascript-144.png",
+   "/img/skill/icons8-html-96.png",
+   "/img/skill/icons8-css-144.png",
+   "/img/skill/icons8-tailwind-css-144.png",
+   "/img/skill/icons8-typescript-144.png",
+   "/img/skill/icons8-unity-144.png",
+   "/img/skill/icons8-ubuntu-96.png",
+   "/img/skill/icons8-c-sharp-logo-144.png",
+   "/img/skill/icons8-postgresql-144.png",
+   "/img/skill/icons8-mongodb-144.png",
+   "/img/skill/icons8-react-native-144.png",
 ];
 let camera, scene, renderer;
 const initThreeJS = () => {
@@ -99,9 +100,12 @@ const initThreeJS = () => {
       });
 
       const sprite = new THREE.Sprite(material);
-      // Generate position for each sprite on line using specific formula
-      const phi = (index / iconTextures.length) * Math.PI * 2;
-      const theta = 1;
+
+      const ICONS_PER_RING = 4;
+      const NUM_OF_RING = 4;
+      const phi = (index % ICONS_PER_RING / ICONS_PER_RING) * Math.PI * 2 + Math.PI / 4;
+      const theta = (Math.floor(index / ICONS_PER_RING) + 1) / (NUM_OF_RING + 1) * Math.PI;
+
       sprite.position.set(
          radius * Math.sin(theta) * Math.cos(phi),
          radius * Math.sin(theta) * Math.sin(phi),
