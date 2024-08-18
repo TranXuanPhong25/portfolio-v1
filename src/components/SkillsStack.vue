@@ -1,5 +1,5 @@
 <template>
-   <section class="w-screen h-screen flex justify-center items-center relative" id="skills">
+   <section class="w-screen h-screen flex justify-center items-center relative overflow-hidden" id="skills">
       <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-3%] opacity-30" />
       <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[12%] opacity-30" />
       <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[27%] opacity-30" />
@@ -101,7 +101,7 @@ const initThreeJS = () => {
       const sprite = new THREE.Sprite(material);
       // Generate position for each sprite on line using specific formula
       const phi = (index / iconTextures.length) * Math.PI * 2;
-      const theta = Math.random() * Math.PI + 0.01;
+      const theta = 1;
       sprite.position.set(
          radius * Math.sin(theta) * Math.cos(phi),
          radius * Math.sin(theta) * Math.sin(phi),

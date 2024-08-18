@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 html {
+    width: 100vw;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 body {
@@ -10,7 +12,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
 }
 .maven-pro {
     font-family: "Maven Pro", sans-serif;
