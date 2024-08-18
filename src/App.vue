@@ -47,7 +47,7 @@ document.addEventListener('hashchange', () => {
       My App currently doesn't support mobile view. Please view it on a desktop.
    </div>
    <template v-else>
-      <HeaderComponent />
+      <HeaderComponent data-aos="fade-down" />
       <RouterView />
 
       <FooterSection />
