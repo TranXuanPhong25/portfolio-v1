@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import NavigatorButton from './header/NavigatorButton.vue'
-
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NavButton } from '@/types';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const buttons: NavButton | any = ref([
    { name: "Home", path: "#", active: false, hash: true },
    { name: "About", path: "#about", active: false, hash: true },
@@ -10,7 +14,6 @@ const buttons: NavButton | any = ref([
    { name: "Works", path: "#works", active: false, hash: true },
    { name: "Projects", path: "#projects", active: false, hash: true },
    { name: "Contact", path: "#contact", active: false, hash: true },
-
 ])
 const currrentPath: string = window.location.hash
 if (currrentPath === "") {
@@ -23,27 +26,59 @@ buttons.value.forEach((button: NavButton | any, index: number) => {
    }
 })
 
+// click event
 const handleActive = (index: number) => {
    buttons.value.forEach((button: NavButton | any, i: Number) => {
       if (i === index) {
          button.active = true
+         window.location.hash = button.path
+         // scrollTo(button.path)
       } else {
          button.active = false
       }
    })
 }
+
+const changeActiveButton = () => {
+   const currrentPath: string = window.location.hash
+   buttons.value.forEach((button: NavButton | any, index: number) => {
+      if (button.path === currrentPath) {
+         buttons.value[index].active = true
+      } else {
+         buttons.value[index].active = false
+      }
+   })
+}
+
+
+onMounted(() => {
+
+   window.addEventListener('hashchange', () => {
+      changeActiveButton()
+   })
+   window.addEventListener('pseudohashchange', () => {
+      changeActiveButton();
+   })
+})
+
 </script>
 <template>
    <header class="flex w-full justify-center py-2 absolute mt-10 z-50 transition-colors duration-400 text-base">
       <nav class="flex gap-3 msm:hidden">
-         <NavigatorButton @click="handleActive(0)" v-bind="buttons[0]">
+         <NavigatorButton @click="(e) => {
+            e.preventDefault();
+            handleActive(0);
+         }" v-bind="buttons[0]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"
                   d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(1)" v-bind="buttons[1]">
+         <NavigatorButton @click="e => {
+            e.preventDefault();
+            handleActive(1);
+         }" v-bind="buttons[1]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"
@@ -53,7 +88,10 @@ const handleActive = (index: number) => {
 
 
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(2)" v-bind="buttons[2]">
+         <NavigatorButton @click="e => {
+            e.preventDefault();
+            handleActive(2);
+         }" v-bind="buttons[2]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"
@@ -61,7 +99,10 @@ const handleActive = (index: number) => {
             </svg>
 
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(3)" v-bind="buttons[3]">
+         <NavigatorButton @click="e => {
+            e.preventDefault();
+            handleActive(3);
+         }" v-bind="buttons[3]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"
@@ -70,7 +111,10 @@ const handleActive = (index: number) => {
 
 
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(4)" v-bind="buttons[4]">
+         <NavigatorButton @click="e => {
+            e.preventDefault();
+            handleActive(4);
+         }" v-bind="buttons[4]">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
@@ -78,7 +122,10 @@ const handleActive = (index: number) => {
                   d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
             </svg>
          </NavigatorButton>
-         <NavigatorButton @click="handleActive(5)" v-bind="buttons[5]">
+         <NavigatorButton @click="e => {
+            e.preventDefault();
+            handleActive(5);
+         }" v-bind="buttons[5]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="size-6">
                <path stroke-linecap="round" stroke-linejoin="round"

@@ -94,7 +94,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-   <section class="w-full h-screen flex items-center justify-center hero-bg relative " ref="main">
+   <section class="w-full h-screen flex items-center justify-center hero-bg relative " id="home" ref="main">
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />
       </div>

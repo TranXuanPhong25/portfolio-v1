@@ -5,7 +5,7 @@ import FooterSection from './components/FooterSection.vue';
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import 'aos/dist/aos.css';
-
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import { onMounted } from 'vue';
 
 document.addEventListener('mousemove', (e) => {
@@ -31,14 +31,11 @@ document.addEventListener('mousemove', (e) => {
    });
 });
 const windowSize = ref<number>(window.innerWidth);
-onMounted(() => {
-   window.addEventListener('resize', () => {
-      windowSize.value = window.innerWidth;
-   });
+window.addEventListener('resize', () => {
+   windowSize.value = window.innerWidth;
 });
-document.addEventListener('hashchange', () => {
-   console.log('hash changed');
-});
+
+
 </script>
 
 <template>

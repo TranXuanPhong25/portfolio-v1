@@ -24,8 +24,8 @@ onMounted(() => {
 
 </script>
 <template>
-   <section id="works" class="py-20 bg-background h-screen" data-aos="flip-down">
-      <div class="container mx-auto text-center" data-aos="fade-up">
+   <section id="works" class=" w-screen relative h-screen">
+      <div class="container mx-auto pt-20 text-center" data-aos="fade-up">
          <h2 class="text-7xl font-semibold ">Work Experience</h2>
          <p class="mt-4 max-w-2xl mx-auto text-xl">A timeline of my work experience.</p>
       </div>
