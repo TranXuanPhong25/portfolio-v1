@@ -1,6 +1,6 @@
-#  portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+# This is my first porfolio (v1)
+Visit demo: [vercel app](https://portfolio-phongs-projects-6b079459.vercel.app)
 
 ## Recommended IDE Setup
 
