@@ -9,7 +9,7 @@ import { NavButton } from '@/types';
 gsap.registerPlugin(ScrollTrigger);
 
 const buttons: NavButton | any = ref([
-   { name: "Home", path: "#", active: false, hash: true },
+   { name: "Home", path: "#home", active: false, hash: true },
    { name: "About", path: "#about", active: false, hash: true },
    { name: "Skills", path: "#skills", active: false, hash: true },
    { name: "Works", path: "#works", active: false, hash: true },
