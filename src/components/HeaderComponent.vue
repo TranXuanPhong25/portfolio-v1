@@ -59,9 +59,8 @@ onMounted(() => {
    const showAnim = gsap.from(header.value, {
       top: "-5rem ",
       paused: true,
-      duration: 0.2,
+      duration: 0.3,
    }).progress(1);
-   console.log(showAnim)
    ScrollTrigger.create({
       start: "top top",
       end: "max",

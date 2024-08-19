@@ -32,7 +32,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-   <section class="w-full h-[80vh] flex items-center justify-center hero-bg relative " id="home">
+   <section class="w-full h-[80vh] flex items-center justify-center relative " id="home">
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />
       </div>
@@ -67,22 +67,6 @@ onUnmounted(() => {
    </section>
 </template>
 <style>
-.hero-bg {
-   position: relative;
-}
-
-.circle {
-   position: absolute;
-   width: 50px;
-   height: 50px;
-   user-select: none;
-   border-radius: 50%;
-   background-color: rgba(255, 255, 255, 0.2);
-   mix-blend-mode: screen;
-   z-index: 10;
-
-}
-
 svg#freepik_stories-version-control:not(.animated) .animable {
    opacity: 0;
 }
