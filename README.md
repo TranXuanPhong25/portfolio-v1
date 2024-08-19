@@ -1,7 +1,8 @@
 
 # This is my first porfolio (v1)
 Visit demo: [vercel app](https://portfolio-phongs-projects-6b079459.vercel.app)
-
+Note:
+- Doesn't support mobile view
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
