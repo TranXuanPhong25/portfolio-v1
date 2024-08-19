@@ -9,7 +9,7 @@ import { NavButton } from '@/types';
 gsap.registerPlugin(ScrollTrigger);
 
 const buttons: NavButton | any = ref([
-   { name: "Home", path: "#home", active: false, hash: true },
+   { name: "Home", path: "#", active: false, hash: true },
    { name: "About", path: "#about", active: false, hash: true },
    { name: "Skills", path: "#skills", active: false, hash: true },
    { name: "Works", path: "#works", active: false, hash: true },
@@ -17,7 +17,7 @@ const buttons: NavButton | any = ref([
    { name: "Contact", path: "#contact", active: false, hash: true },
 ])
 const currrentPath: string = window.location.hash
-if (currrentPath === "") {
+if (currrentPath === "" || currrentPath === "#") {
    buttons.value[0].active = true
 }
 buttons.value.forEach((button: NavButton | any, index: number) => {
@@ -42,6 +42,7 @@ const handleActive = (index: number) => {
 
 const changeActiveButton = () => {
    const currrentPath: string = window.location.hash
+
    buttons.value.forEach((button: NavButton | any, index: number) => {
       if (button.path === currrentPath) {
          buttons.value[index].active = true
@@ -49,6 +50,9 @@ const changeActiveButton = () => {
          buttons.value[index].active = false
       }
    })
+   if (currrentPath === "#" || currrentPath === "#home") {
+      buttons.value[0].active = true
+   }
 }
 
 
