@@ -60,7 +60,6 @@ onMounted(() => {
       top: "-5rem ",
       paused: true,
       duration: 0.2,
-      backgroundColor: "rgb(34, 40, 49)"
    }).progress(1);
    console.log(showAnim)
    ScrollTrigger.create({
