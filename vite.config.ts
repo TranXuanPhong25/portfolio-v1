@@ -18,7 +18,4 @@ export default defineConfig({
         outDir: "dist",
     },
     publicDir: "public",
-    optimizeDeps: {
-        include: ["vanilla-tilt"],
-    },
 });
