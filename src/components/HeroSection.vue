@@ -8,93 +8,32 @@ import HeroIllustration from './hero/HeroBrainstormSVG.vue';
 import WaveBackground from './hero/WaveBackground.vue';
 import SocialBar from '@/components/hero/SocialBar.vue';
 
-import anime from 'animejs/lib/anime.es.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const main = ref();
-let ctx: any;
 let typed: Typed = null;
 onMounted(() => {
-   // Generate random circles as background
    typed = new Typed('#typed', {
-      strings: [" Phong ^1000", " a Developer", " a Student"],
+      strings: [" Phong ^1500", " a Developer", " a Student"],
       typeSpeed: 80,
       backSpeed: 50,
       loop: true,
       smartBackspace: true,
-      // backDelay: 1000,
       startDelay: 1000,
       showCursor: true,
       cursorChar: '|',
    });
-   // const circles = document.querySelector('.hero-bg');
-   // const numCircles = 40;
-   // for (let i = 0; i < numCircles; i++) {
-   //    const circle = document.createElement('div');
-   //    circle.classList.add('circle');
-   //    circle.style.animationDelay = `${Math.random() * 2 / 3}s`;
-   //    circle.style.left = `${Math.random() * 100}%`;
-   //    circle.style.bottom = `${Math.random() * 400 - 300}%`;
-   //    circle.style.transform = `scale(${Math.random() + 0.1})`;
-   //    circles.appendChild(circle);
-   // }
-   anime({
-      targets: '.circle',
-      translateX: () => anime.random(-50, 50) + 'vw',
-      translateY: () => anime.random(-50, 50) + 'vh',
-      scale: () => anime.random(0.5, 1.5),
-      easing: 'easeInOutQuad',
-      duration: 6000,
-      loop: true,
-      direction: 'alternate',
-   });
-   ctx = gsap.context((self) => {
-      const header = document.querySelector('header');
-      gsap.to(header, {
-         scrollTrigger: {
-            trigger: main.value,
-            start: 'top -25',
-            end: '+=999999 ',
-            scrub: true,
-
-            onEnter: () => {
-               header.classList.toggle('absolute')
-               header.classList.toggle('mt-10')
-               header.classList.toggle('fixed')
-               header.classList.toggle('top-0')
-               // header.classList.toggle('shadow-md')
-               header.classList.toggle('bg-background/80')
-               // header.classList.toggle('bg-slate-900/40')
-               // header.classList.toggle('py-3')
-               // header.classList.toggle('backdrop-blur-md')
-            },
-            onLeaveBack: () => {
-               header.classList.toggle('absolute')
-               header.classList.toggle('mt-10')
-               header.classList.toggle('fixed')
-               header.classList.toggle('top-0')
-               // header.classList.toggle('shadow-md')
-               header.classList.toggle('bg-background/80')
-               // header.classList.toggle('bg-slate-900/40')
-               // header.classList.toggle('py-3')
-               // header.classList.toggle('backdrop-blur-md')
-
-            }
-         },
-      });
-   }, main.value); // <- Scope!
 
 
 });
 
 onUnmounted(() => {
-   ctx.revert(); // <- Easy Cleanup!
    typed.destroy();
 });
 </script>
 <template>
-   <section class="w-full h-screen flex items-center justify-center hero-bg relative " id="home" ref="main">
+   <section class="w-full h-[80vh] flex items-center justify-center hero-bg relative " id="home" ref="main">
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />
       </div>

@@ -20,8 +20,8 @@ onMounted(() => {
 <template>
 
 
-   <footer class=" w-screen relative">
-      <div class="w-screen z-10 " data-aos="fade-up">
+   <footer class=" w-full relative">
+      <div class="w-full z-10 " data-aos="fade-up">
          <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 360" xmlns="http://www.w3.org/2000/svg"
             class="-translate-y-0">
             <path
@@ -143,7 +143,7 @@ onMounted(() => {
             </div>
          </div>
       </div>
-      <div class="bg-second w-screen text-center">
+      <div class="bg-second w-full text-center">
          <a target="_blank" class="block" href="https://icons8.com/">Icon by Icons8.com</a>
          <a target="_blank" class="block" href="https://www.freepik.com/">Image by freepik.com</a>
 

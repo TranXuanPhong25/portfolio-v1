@@ -1,5 +1,5 @@
 <template>
-   <section class="w-screen h-screen flex justify-center items-center relative overflow-hidden" id="skills">
+   <section class="w-full h-screen flex justify-center items-center relative overflow-hidden" id="skills">
       <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-3%] opacity-30" />
       <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[12%] opacity-30" />
       <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[27%] opacity-30" />

@@ -2,7 +2,7 @@
 import MailTo from './contact/MailTo.vue';
 </script>
 <template>
-   <section id="contact" class="flex justify-center items-center w-screen h-[80vh] relative ">
+   <section id="contact" class="flex justify-center items-center w-full h-[80vh] relative ">
 
       <MailTo />
    </section>

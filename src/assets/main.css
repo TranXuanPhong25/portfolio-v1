@@ -36,6 +36,9 @@ body::-webkit-scrollbar {
 /* Custom Scrollbar */
 body::-webkit-scrollbar {
     display: none;
+
+    /* position: fixed; */
+    /* z-index: 9999; */
 }
 .parallax-tilt-parent {
     transform-style: preserve-3d;

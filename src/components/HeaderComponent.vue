@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NavButton } from '@/types';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const buttons: NavButton | any = ref([
@@ -51,15 +52,31 @@ const changeActiveButton = () => {
 }
 
 
+const header = ref<HTMLElement | null>(null)
 onMounted(() => {
-
    window.addEventListener('hashchange', changeActiveButton)
    window.addEventListener('pseudohashchange', changeActiveButton)
+   const showAnim = gsap.from(header.value, {
+      top: "-5rem ",
+      paused: true,
+      duration: 0.2,
+      backgroundColor: "rgb(34, 40, 49)"
+   }).progress(1);
+   console.log(showAnim)
+   ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+         self.direction === -1 ? showAnim.play() : showAnim.reverse()
+      }
+   });
 })
 
 </script>
 <template>
-   <header class="flex w-full justify-center py-2 absolute mt-10 z-50 transition-colors duration-400 text-base">
+   <header
+      class="flex w-full justify-center py-3  z-50 transition-colors duration-600 text-base sticky  top-0 left-0 bg-background/50 mt-10"
+      ref="header">
       <nav class="flex gap-3 msm:hidden">
          <NavigatorButton @click="(e) => {
             e.preventDefault();
