@@ -13,7 +13,7 @@ const projectsData = [
       description: 'My first Portfolio website',
       image: '/img/project/portfoliov1.png',
       repo: 'https://github.com/TranXuanPhong25/portfolio',
-      demo: 'https://tranxuanphong25.github.io/portfolio/',
+      demo: 'https://portfolio-phongs-projects-6b079459.vercel.app',
 
    }
 
