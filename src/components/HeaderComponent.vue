@@ -53,12 +53,8 @@ const changeActiveButton = () => {
 
 onMounted(() => {
 
-   window.addEventListener('hashchange', () => {
-      changeActiveButton()
-   })
-   window.addEventListener('pseudohashchange', () => {
-      changeActiveButton();
-   })
+   window.addEventListener('hashchange', changeActiveButton)
+   window.addEventListener('pseudohashchange', changeActiveButton)
 })
 
 </script>
