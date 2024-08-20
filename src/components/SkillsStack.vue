@@ -1,14 +1,16 @@
-<script setup lang="ts">
-import FluidContainer from './skill/FluidContainer.vue';
-</script>
 <template>
-   <section id="skills" class="py-20 h-screen bg-backgroun relative">
-      <div class="container mx-auto text-center">
-         <h2 class="text-4xl font-semibold">Skills</h2>
-         <div class="mt-8 grid grid-cols-2 gap-4 max-w-md mx-auto">
-
-         </div>
-      </div>
-      <FluidContainer />
+   <section class="w-full h-screen flex justify-center items-center relative overflow-hidden" id="skills">
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-3%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[12%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[27%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[42%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[57%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[72%] opacity-30" />
+      <!-- <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[85%]" /> -->
+      <SkillSphere />
    </section>
 </template>
+<script setup lang="ts">
+import SkillMarquee from './skill/SkillMarquee.vue';
+import SkillSphere from './skill/SkillSphere.vue';
+</script>
