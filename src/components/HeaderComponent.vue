@@ -4,7 +4,7 @@ import NavigatorButton from './header/NavigatorButton.vue'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NavButton } from '@/types';
-
+import CursorEffect from './CursorEffect.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +64,7 @@ onMounted(() => {
       top: "-5rem ",
       paused: true,
       duration: 0.3,
-      backgroundColor: "rgba(34,40,49)"
+      backgroundColor: "rgb(34,40,49)"
    }).progress(1);
    ScrollTrigger.create({
       start: "top top",
@@ -78,7 +78,7 @@ onMounted(() => {
 </script>
 <template>
    <header
-      class="flex w-full justify-center py-3  z-[1000] transition-colors duration-600 text-base sticky  top-0 left-0 mt-10"
+      class="flex w-full justify-center py-3  z-[1000] transition-colors duration-600 text-base sticky  top-0 left-0 mt-10 bg-background/70"
       ref="header">
       <nav class="flex gap-3 msm:hidden">
          <NavigatorButton @click="(e) => {
@@ -148,7 +148,7 @@ onMounted(() => {
                   d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
             </svg>
          </NavigatorButton>
-
+         <CursorEffect />
       </nav>
    </header>
 </template>
