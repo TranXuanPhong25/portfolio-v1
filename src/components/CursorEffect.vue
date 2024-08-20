@@ -3,6 +3,7 @@ import { ref } from 'vue'
 const dustTrailMode = ref(true)
 const toggleCursorEffect = () => {
    dustTrailMode.value = !dustTrailMode.value
+   window.dispatchEvent(new Event('toggleCursorEffect'))
 }
 
 </script>
