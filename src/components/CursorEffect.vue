@@ -52,8 +52,8 @@ const toggleCursorEffect = () => {
 
 .icon {
    position: absolute;
-   top: calc(50% -13px);
-   left: calc(50% -13px);
+   top: calc(50% - 13px);
+   left: calc(50% - 13px);
    width: 30px;
    height: 30px;
 }
