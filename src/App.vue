@@ -4,15 +4,14 @@ import HeaderComponent from './components/HeaderComponent.vue'
 import FooterSection from './components/FooterSection.vue';
 import { onMounted, onUnmounted, ref } from 'vue'
 import 'aos/dist/aos.css';
-import FluidContainer from './components/skill/FluidContainer.vue';
+import FluidContainer from './components/FluidContainer.vue';
 import gsap from 'gsap'
 
 
 const windowSize = ref<number>(window.innerWidth);
+const dustTrailMode = ref(true)
 
-const handleResize = () => {
-   windowSize.value = window.innerWidth;
-};
+
 function throttle(func, limit) {
    let lastFunc;
    let lastRan;
@@ -55,10 +54,10 @@ const handleMouseMove = (e: MouseEvent) => {
    });
 
 };
-const dustTrailMode = ref(true)
-const throttledMouseMove = throttle(handleMouseMove, 10); // Throttle to 100ms
+const throttledMouseMove = throttle(handleMouseMove, 10); // Throttle to 10ms
 
 onMounted(() => {
+   //catch the customEvent from cursorEffect.vue
    window.addEventListener('toggleCursorEffect', () => {
       dustTrailMode.value = !dustTrailMode.value;
       if (dustTrailMode.value) {
@@ -71,6 +70,9 @@ onMounted(() => {
    document.body.addEventListener('mousemove', throttledMouseMove);
 
 });
+const handleResize = () => {
+   windowSize.value = window.innerWidth;
+};
 
 onUnmounted(() => {
    window.removeEventListener('resize', handleResize);
