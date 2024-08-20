@@ -3,7 +3,6 @@ import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterSection from './components/FooterSection.vue';
 import { onMounted, onUnmounted, ref } from 'vue'
-
 import 'aos/dist/aos.css';
 import FluidContainer from './components/FluidContainer.vue';
 
@@ -11,7 +10,6 @@ import gsap from 'gsap'
 
 
 const windowSize = ref<number>(window.innerWidth);
-
 const dustTrailMode = ref(true)
 
 const handleResize = () => {
@@ -94,7 +92,6 @@ onUnmounted(() => {
       <main class="z-[100] relative">
          <HeaderComponent data-aos="fade-down" />
          <RouterView />
-
          <FooterSection />
       </main>
    </template>
