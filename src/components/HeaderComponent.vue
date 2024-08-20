@@ -64,6 +64,7 @@ onMounted(() => {
       top: "-5rem ",
       paused: true,
       duration: 0.3,
+      backgroundColor: "rgba(34,40,49)"
    }).progress(1);
    ScrollTrigger.create({
       start: "top top",
@@ -77,7 +78,7 @@ onMounted(() => {
 </script>
 <template>
    <header
-      class="flex w-full justify-center py-3  z-50 transition-colors duration-600 text-base sticky  top-0 left-0 bg-background/50 mt-10"
+      class="flex w-full justify-center py-3  z-[1000] transition-colors duration-600 text-base sticky  top-0 left-0 mt-10"
       ref="header">
       <nav class="flex gap-3 msm:hidden">
          <NavigatorButton @click="(e) => {

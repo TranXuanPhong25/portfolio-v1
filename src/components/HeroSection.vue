@@ -42,9 +42,9 @@ onUnmounted(() => {
 
       <div class=" ml-20  w-[590px] z-10 relative" data-aos="fade-up">
          <h1 class="text-3xl font-bold flex items-center ">
-            <span class="w-full h-1 bg-second rounded-md "></span>
+            <span class="w-full h-1 bg-second/70 rounded-md "></span>
             <p class="text-main   mx-2">HELLO</p>
-            <span class="w-full h-1  bg-second rounded-md "></span>
+            <span class="w-full h-1  bg-second/70 rounded-md "></span>
          </h1>
 
          <h1 class="text-7xl text-white font-bold hammersmith-one-regular select-none flex items-center justify-center">
@@ -54,7 +54,7 @@ onUnmounted(() => {
 
          <GetCVButton buttonLink="#about" buttonText="Get My CV">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-               stroke="currentColor" class="size-6 animate-bounce">
+               stroke="currentColor" class="size-6 animate-bounce ">
                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>
 

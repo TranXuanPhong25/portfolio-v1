@@ -25,21 +25,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 let config = {
-   SIM_RESOLUTION: 256,
-   DYE_RESOLUTION: 128,
+   SIM_RESOLUTION: 128,
+   DYE_RESOLUTION: 1024,
    CAPTURE_RESOLUTION: 512,
-   DENSITY_DISSIPATION: 2.4,
-   VELOCITY_DISSIPATION: 0.9,
+   DENSITY_DISSIPATION: 3,
+   VELOCITY_DISSIPATION: 0.2,
    PRESSURE: 0.2,
    PRESSURE_ITERATIONS: 20,
-   CURL: 0,
-   SPLAT_RADIUS: 0.2,
+   CURL: 50,
+   SPLAT_RADIUS: 0.3,
    SPLAT_FORCE: 6000,
    SHADING: false,
    COLORFUL: false,
    COLOR_UPDATE_SPEED: 10,
    PAUSED: false,
-   BACK_COLOR: { r: 57, g: 62, b: 70 },
+   BACK_COLOR: { r: 34, g: 40, b: 49 },
    TRANSPARENT: false,
    BLOOM: false,
    BLOOM_ITERATIONS: 8,
@@ -820,7 +820,7 @@ onMounted(() => {
    let sunrays;
    let sunraysTemp;
 
-   let ditheringTexture = createTextureAsync('LDR_LLL1_0.png');
+   let ditheringTexture = createTextureAsync('.../assets/LDR_LLL1_0.png');
 
    const blurProgram = new Program(blurVertexShader, blurShader);
    const copyProgram = new Program(baseVertexShader, copyShader);
@@ -1156,12 +1156,12 @@ onMounted(() => {
    }
 
    function render(target) {
-      if (config.BLOOM)
-         applyBloom(dye.read, bloom);
-      if (config.SUNRAYS) {
-         applySunrays(dye.read, dye.write, sunrays);
-         blur(sunrays, sunraysTemp, 1);
-      }
+      // if (config.BLOOM)
+      //    applyBloom(dye.read, bloom);
+      // if (config.SUNRAYS) {
+      //    applySunrays(dye.read, dye.write, sunrays);
+      //    blur(sunrays, sunraysTemp, 1);
+      // }
 
       if (target == null || !config.TRANSPARENT) {
          gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
@@ -1207,64 +1207,6 @@ onMounted(() => {
       if (config.SUNRAYS)
          gl.uniform1i(displayMaterial.uniforms.uSunrays, sunrays.attach(3));
       blit(target);
-   }
-
-   // function applyBloom(source, destination) {
-   //    if (bloomFramebuffers.length < 2)
-   //       return;
-
-   //    let last = destination;
-
-   //    gl.disable(gl.BLEND);
-   //    bloomPrefilterProgram.bind();
-   //    let knee = config.BLOOM_THRESHOLD * config.BLOOM_SOFT_KNEE + 0.0001;
-   //    let curve0 = config.BLOOM_THRESHOLD - knee;
-   //    let curve1 = knee * 2;
-   //    let curve2 = 0.25 / knee;
-   //    gl.uniform3f(bloomPrefilterProgram.uniforms.curve, curve0, curve1, curve2);
-   //    gl.uniform1f(bloomPrefilterProgram.uniforms.threshold, config.BLOOM_THRESHOLD);
-   //    gl.uniform1i(bloomPrefilterProgram.uniforms.uTexture, source.attach(0));
-   //    blit(last);
-
-   //    bloomBlurProgram.bind();
-   //    for (let i = 0; i < bloomFramebuffers.length; i++) {
-   //       let dest = bloomFramebuffers[i];
-   //       gl.uniform2f(bloomBlurProgram.uniforms.texelSize, last.texelSizeX, last.texelSizeY);
-   //       gl.uniform1i(bloomBlurProgram.uniforms.uTexture, last.attach(0));
-   //       blit(dest);
-   //       last = dest;
-   //    }
-
-   //    gl.blendFunc(gl.ONE, gl.ONE);
-   //    gl.enable(gl.BLEND);
-
-   //    for (let i = bloomFramebuffers.length - 2; i >= 0; i--) {
-   //       let baseTex = bloomFramebuffers[i];
-   //       gl.uniform2f(bloomBlurProgram.uniforms.texelSize, last.texelSizeX, last.texelSizeY);
-   //       gl.uniform1i(bloomBlurProgram.uniforms.uTexture, last.attach(0));
-   //       gl.viewport(0, 0, baseTex.width, baseTex.height);
-   //       blit(baseTex);
-   //       last = baseTex;
-   //    }
-
-   //    gl.disable(gl.BLEND);
-   //    bloomFinalProgram.bind();
-   //    gl.uniform2f(bloomFinalProgram.uniforms.texelSize, last.texelSizeX, last.texelSizeY);
-   //    gl.uniform1i(bloomFinalProgram.uniforms.uTexture, last.attach(0));
-   //    gl.uniform1f(bloomFinalProgram.uniforms.intensity, config.BLOOM_INTENSITY);
-   //    blit(destination);
-   // }
-
-   function applySunrays(source, mask, destination) {
-      gl.disable(gl.BLEND);
-      sunraysMaskProgram.bind();
-      gl.uniform1i(sunraysMaskProgram.uniforms.uTexture, source.attach(0));
-      blit(mask);
-
-      sunraysProgram.bind();
-      gl.uniform1f(sunraysProgram.uniforms.weight, config.SUNRAYS_WEIGHT);
-      gl.uniform1i(sunraysProgram.uniforms.uTexture, mask.attach(0));
-      blit(destination);
    }
 
    function blur(target, temp, iterations) {
@@ -1323,26 +1265,22 @@ onMounted(() => {
       return radius;
    }
 
-   canvas.value.addEventListener('mouseover', e => {
-      let posX = scaleByPixelRatio(e.offsetX);
-      let posY = scaleByPixelRatio(e.offsetY);
+   window.addEventListener('pointerover', e => {
+      let posX = scaleByPixelRatio(e.clientX);
+      let posY = scaleByPixelRatio(e.clientY);
       let pointer = pointers.find(p => p.id == -1);
       if (pointer == null)
          pointer = new pointerPrototype();
       updatePointerDownData(pointer, -1, posX, posY);
    });
 
-   canvas.value.addEventListener('mousemove', e => {
+   window.addEventListener('pointermove', e => {
       let pointer = pointers[0];
       if (!pointer.down) return;
-      let posX = scaleByPixelRatio(e.offsetX);
-      let posY = scaleByPixelRatio(e.offsetY);
+      let posX = scaleByPixelRatio(e.clientX);
+      let posY = scaleByPixelRatio(e.clientY);
       updatePointerMoveData(pointer, posX, posY);
    });
-
-   // window.addEventListener('mouseup', () => {
-   //    updatePointerUpData(pointers[0]);
-   // });
 
    canvas.value.addEventListener('touchstart', e => {
       e.preventDefault();
@@ -1377,12 +1315,12 @@ onMounted(() => {
       }
    });
 
-   window.addEventListener('keydown', e => {
-      if (e.code === 'KeyP')
-         config.PAUSED = !config.PAUSED;
-      if (e.key === ' ')
-         splatStack.push(parseInt(Math.random() * 20) + 5);
-   });
+   // window.addEventListener('keydown', e => {
+   //    if (e.code === 'KeyP')
+   //       config.PAUSED = !config.PAUSED;
+   //    if (e.key === ' ')
+   //       splatStack.push(parseInt(Math.random() * 20) + 5);
+   // });
 
    function updatePointerDownData(pointer, id, posX, posY) {
       pointer.id = id;
@@ -1516,6 +1454,6 @@ onMounted(() => {
 canvas {
    width: 100%;
    height: 100vh;
-   z-index: -100;
+   z-index: 10;
 }
 </style>
