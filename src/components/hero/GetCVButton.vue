@@ -5,10 +5,10 @@ defineProps({
 })
 </script>
 <template>
-   <div class="flex  w-full justify-center mt-8" data-aos="zoom-out-up">
+   <div class="flex w-full justify-center mt-8" data-aos="zoom-out-up">
       <a :href="buttonLink" class="cssbuttons-io-button dbutton">
          {{ buttonText }}
-         <div class="icon ">
+         <div class="getcv-subicon  ">
             <slot></slot>
          </div>
       </a>
@@ -38,7 +38,8 @@ defineProps({
    transition: all 0.2s ease;
 }
 
-.cssbuttons-io-button .icon {
+.cssbuttons-io-button .getcv-subicon {
+
    background: white;
    /* margin-left: 1em; */
    position: absolute;
@@ -48,28 +49,29 @@ defineProps({
    height: 2.2em;
    width: 2.2em;
    border-radius: 4px;
+
    /* box-shadow: 0.1em 0.1em 0.6em 0.2em #4ECCA3; */
    right: 0.3em;
    transition: all 0.3s ease;
    z-index: 20;
 }
 
-.cssbuttons-io-button:hover .icon {
+.cssbuttons-io-button:hover .getcv-subicon {
    width: calc(100% - 0.6em);
 }
 
-.cssbuttons-io-button .icon svg {
+.cssbuttons-io-button .getcv-subicon svg {
 
    width: 2em;
    transition: transform 0.3s;
    color: #4ECCA3;
 }
 
-.cssbuttons-io-button:hover .icon svg {
+.cssbuttons-io-button:hover .getcv-subicon svg {
    transform: translateX(0.1em);
 }
 
-.cssbuttons-io-button:active .icon {
+.cssbuttons-io-button:active .getcv-subicon {
    transform: scale(0.95);
 
 }
