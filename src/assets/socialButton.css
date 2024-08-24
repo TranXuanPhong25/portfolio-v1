@@ -7,13 +7,18 @@
     border: none;
     background-color: transparent;
     position: relative;
-    /* overflow: hidden; */
     cursor: pointer;
     transition: all 0.3s;
-    margin: 20px 0;
+    margin: 10px 0;
     z-index: 10;
 }
-
+@media screen and (max-width: 1024px) {
+    .Btn {
+        width: 50px;
+        height: 50px;
+        margin: 20px 15px;
+    }
+}
 .Btn::before {
     content: "";
     position: absolute;
