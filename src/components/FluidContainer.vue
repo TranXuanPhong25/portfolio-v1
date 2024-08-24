@@ -1,5 +1,5 @@
 <script lang="js" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 /*
 MIT License
@@ -42,9 +42,11 @@ let config = {
    BACK_COLOR: { r: 34, g: 40, b: 49 },
    TRANSPARENT: false,
 }
-
 const canvas = ref(null);
+
+let handlePointerOverCanvas, handlePointerMoveCanvas, handleTouchStart, handleTouchEnd, handleTouchMove;
 onMounted(() => {
+
    resizeCanvas();
    function pointerPrototype() {
       this.id = -1;
@@ -946,26 +948,23 @@ onMounted(() => {
          radius *= aspectRatio;
       return radius;
    }
-
-   window.addEventListener('pointerover', e => {
+   handlePointerOverCanvas = e => {
       let posX = scaleByPixelRatio(e.clientX);
       let posY = scaleByPixelRatio(e.clientY);
       let pointer = pointers.find(p => p.id == -1);
       if (pointer == null)
          pointer = new pointerPrototype();
       updatePointerDownData(pointer, -1, posX, posY);
-   });
-
-   window.addEventListener('pointermove', e => {
+   }
+   handlePointerMoveCanvas = e => {
       let pointer = pointers[0];
       if (!pointer.down) return;
       let posX = scaleByPixelRatio(e.clientX);
       let posY = scaleByPixelRatio(e.clientY);
       updatePointerMoveData(pointer, posX, posY);
-   });
-
-   canvas.value.addEventListener('touchstart', e => {
-      e.preventDefault();
+   }
+   handleTouchStart = e => {
+      // e.preventDefault();
       const touches = e.targetTouches;
       while (touches.length >= pointers.length)
          pointers.push(new pointerPrototype());
@@ -974,10 +973,9 @@ onMounted(() => {
          let posY = scaleByPixelRatio(touches[i].pageY);
          updatePointerDownData(pointers[i + 1], touches[i].identifier, posX, posY);
       }
-   });
-
-   canvas.value.addEventListener('touchmove', e => {
-      e.preventDefault();
+   }
+   handleTouchMove = e => {
+      // e.preventDefault();
       const touches = e.targetTouches;
       for (let i = 0; i < touches.length; i++) {
          let pointer = pointers[i + 1];
@@ -986,16 +984,24 @@ onMounted(() => {
          let posY = scaleByPixelRatio(touches[i].pageY);
          updatePointerMoveData(pointer, posX, posY);
       }
-   }, false);
-
-   window.addEventListener('touchend', e => {
+   }
+   handleTouchEnd = e => {
       const touches = e.changedTouches;
       for (let i = 0; i < touches.length; i++) {
          let pointer = pointers.find(p => p.id == touches[i].identifier);
          if (pointer == null) continue;
          updatePointerUpData(pointer);
       }
-   });
+   }
+   window.addEventListener('pointerover', handlePointerOverCanvas);
+
+   window.addEventListener('pointermove', handlePointerMoveCanvas);
+
+   canvas.value.addEventListener('touchstart', handleTouchStart);
+
+   canvas.value.addEventListener('touchmove', handleTouchMove, false);
+
+   window.addEventListener('touchend', handleTouchEnd);
 
    function updatePointerDownData(pointer, id, posX, posY) {
       pointer.id = id;
@@ -1112,6 +1118,13 @@ onMounted(() => {
       }
       return hash;
    };
+})
+onBeforeUnmount(() => {
+   window.removeEventListener('pointerover', handlePointerOverCanvas);
+   window.removeEventListener('pointermove', handlePointerMoveCanvas);
+   canvas.value.removeEventListener('touchstart', handleTouchStart);
+   canvas.value.removeEventListener('touchmove', handleTouchMove);
+   window.removeEventListener('touchend', handleTouchEnd);
 })
 </script>
 <template>

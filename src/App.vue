@@ -9,12 +9,7 @@ import FluidContainer from './components/FluidContainer.vue';
 import gsap from 'gsap'
 
 
-const windowSize = ref<number>(window.innerWidth);
 const dustTrailMode = ref(true)
-
-const handleResize = () => {
-   windowSize.value = window.innerWidth;
-};
 
 function throttle(func, limit) {
    let lastFunc;
@@ -70,13 +65,12 @@ onMounted(() => {
          document.body.removeEventListener('mousemove', throttledMouseMove);
       }
    });
-   window.addEventListener('resize', handleResize);
+
    document.body.addEventListener('mousemove', throttledMouseMove);
 
 });
 
 onUnmounted(() => {
-   window.removeEventListener('resize', handleResize);
    document.body.removeEventListener('mousemove', throttledMouseMove);
 });
 
@@ -85,16 +79,13 @@ onUnmounted(() => {
 <template>
    <FluidContainer v-if="!dustTrailMode" />
 
-   <div v-if="windowSize < 1000">
-      My App currently doesn't support mobile view. Please view it on a desktop.
-   </div>
-   <template v-else>
-      <main class="z-[100] relative">
-         <HeaderComponent data-aos="fade-down" />
-         <RouterView />
-         <FooterSection />
-      </main>
-   </template>
+
+   <main class="z-[100] relative">
+      <HeaderComponent data-aos="fade-down" />
+      <RouterView />
+      <FooterSection />
+   </main>
+
 </template>
 
 
