@@ -22,7 +22,7 @@ defineProps({
    font-family: inherit;
    padding: 0.3em;
    padding-left: 0.9em;
-   font-size: 17px;
+   font-size: 1.15rem;
    font-weight: 500;
    border-radius: 4px;
    border: none;
