@@ -36,18 +36,21 @@ onUnmounted(() => {
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />
       </div>
-      <SocialBar data-aos="flip-right" />
+      <SocialBar data-aos="flip-right" class="flex-col absolute right-[3vw] bottom-1/3 msm:hidden" />
 
-      <HeroIllustration class="select-none pointer-events-none w[600px] h-[600px] -m-14 z-10" data-aos="flip-down" />
+      <HeroIllustration
+         class="select-none pointer-events-none w-[47vw] h-[47vw] max-w-[800px] max-h-[800px] -m-14 z-10 hidden xl:block "
+         data-aos="flip-down" />
 
-      <div class=" ml-20  w-[590px] z-10 relative" data-aos="fade-up">
-         <h1 class="text-3xl font-bold flex items-center ">
-            <span class="w-full h-1 bg-second/70 rounded-md "></span>
+      <div class="w-full xl:ml-16 lg:w-[80vw] xl:w-[500px] 2xl:w-[590px] z-10 relative" data-aos="fade-up">
+         <h1 class="lg:text-5xl 2xl:text-3xl font-bold flex items-center  justify-center">
+            <span class="w-[37%] h-1 bg-second/70 rounded-md"></span>
             <p class="text-main   mx-2">HELLO</p>
-            <span class="w-full h-1  bg-second/70 rounded-md "></span>
+            <span class="w-[37%] h-1  bg-second/70 rounded-md "></span>
          </h1>
 
-         <h1 class="text-7xl text-white font-bold hammersmith-one-regular select-none flex items-center justify-center">
+         <h1
+            class="lg:text-[5rem] xl:text-6xl 2xl:text-7xl text-white font-bold hammersmith-one-regular select-none flex items-center justify-center">
             <p class="ml-1"> I'm &nbsp;</p>
             <p id="typed"></p>
          </h1>
