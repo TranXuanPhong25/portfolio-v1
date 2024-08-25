@@ -81,7 +81,7 @@ onUnmounted(() => {
 
 
    <main class="z-[100] relative">
-      <HeaderComponent data-aos="fade-down" />
+      <HeaderComponent />
       <RouterView />
       <FooterSection />
    </main>
