@@ -146,6 +146,9 @@ buttons.value.forEach((button: NavButton | any, index: number) => {
 
 // click event
 const handleActive = (index: number) => {
+   //temporary handle menu
+   allowToggle.value = true;
+   toggleMenu();
    buttons.value.forEach((button: NavButton | any, i: Number) => {
       if (i === index) {
          button.active = true
