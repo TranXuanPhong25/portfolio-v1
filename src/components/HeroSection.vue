@@ -26,23 +26,24 @@ onUnmounted(() => {
 });
 </script>
 <template>
-   <section class="w-full h-[80vh] flex xl:flex-row flex-col items-center justify-center relative " id="home">
+   <section class="w-full h-[80vh] flex xl:flex-row flex-col items-center justify-center relative mt-10 lg:mt-0 "
+      id="home">
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />
       </div>
       <HeroIllustration
-         class="select-none pointer-events-none lg:mb-0 xl:w-[47vw] xl:h-[47vw] max-w-[850px] max-h-[850px] -m-14 z-10 md:block hidden "
+         class="select-none pointer-events-none lg:mb-0 xl:w-[47vw] xl:h-[47vw] max-w-[850px] max-h-[850px] -m-14 z-10 w-[90vw] h-[90vw] sm:block hidden "
          data-aos="flip-down" />
       <!-- text section -->
       <div class="w-full lg:w-[80vw] xl:w-[500px] 2xl:w-[590px] xl:ml-16 z-10 relative" data-aos="fade-up">
          <h1 class="text-[5.5rem] lg:text-5xl 2xl:text-7xl font-bold flex items-center justify-center">
-            <span class="md:w-[30%] lg:w-[37%] md:block w-0  h-1 bg-second/70 rounded-md"></span>
+            <span class="md:w-[30%] lg:w-[37%] md:block  w-0  h-1 bg-second/70 rounded-md"></span>
             <p class="text-main md:mx-2">HELLO</p>
-            <span class="md:w-[30%] lg:w-[37%] md:block w-0  h-1  bg-second/70 rounded-md "></span>
+            <span class="md:w-[30%] lg:w-[37%] md:block  w-0  h-1  bg-second/70 rounded-md "></span>
          </h1>
          <h1
-            class="text-4xl sml:text-5xl sm:text-7xl md:text-[5.5rem] lg:text-[5rem] xl:text-6xl 2xl:text-8xl sm:leading-[5.5rem] ml-6 sm:ml-20 lg:mt-3 md:ml-0  text-white font-bold hammersmith-one-regular select-none items-center justify-center flex ">
-            <p class="sm:-ml-10 md:ml-1"> I'm &nbsp;</p>
+            class="text-4xl sml:text-5xl sm:text-7xl md:text-[5.5rem] lg:text-[5rem] xl:text-6xl 2xl:text-8xl sm:leading-[5.5rem] lg:mt-3 md:ml-0  text-white font-bold hammersmith-one-regular select-none items-center justify-center flex ">
+            <p class="md:ml-1"> I'm &nbsp;</p>
             <p id="typed"></p>
          </h1>
          <GetCVButton buttonLink="#about" buttonText="Get My CV">

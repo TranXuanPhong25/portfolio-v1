@@ -9,8 +9,8 @@
 }
 
 .buttons-navigator button {
-    width: 110px;
     height: 40px;
+    width: 110px;
     position: relative;
     overflow: hidden;
     font-weight: 500;
@@ -24,7 +24,12 @@
     border-radius: 3px;
     letter-spacing: 3px;
 }
-
+@media screen and (max-width: 1024px) {
+    .buttons-navigator button {
+        height: 80px;
+        width: 102vw;
+    }
+}
 .buttons-navigator button:active {
     color: white;
 }
@@ -55,6 +60,7 @@
     position: absolute;
     left: 0;
     top: 0;
+
     margin: 0;
     padding: 0;
     z-index: 1;
@@ -84,7 +90,6 @@
 .buttons-navigator button p {
     padding: 0;
     margin: 0;
-    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -150,7 +155,7 @@
 
 .buttons-navigator button.start p:before {
     top: -50%;
-    transform: rotate(5deg);
+    transform: rotate(15deg);
 }
 
 .buttons-navigator button.start p:after {
