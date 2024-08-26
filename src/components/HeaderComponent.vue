@@ -8,24 +8,37 @@ import CursorEffect from './CursorEffect.vue';
 import anime from 'animejs';
 gsap.registerPlugin(ScrollTrigger);
 
-const menuOpen = ref(false);
+const menuOpen = ref<boolean>(false);
 const menuIcon = ref<SVGSVGElement | null>(null);
 const navBar = ref<HTMLElement | null>(null);
 const handleResizeScreen = () => {
-   // if (window.innerWidth > 1024) {
+   if (window.innerWidth > 1024) {
+      if (menuOpen.value) {
+         menuOpen.value = false;
+         animateIcon();
+         // animateNavBar();
 
-   //    if (!menuOpen.value) {
-   //       menuOpen.value = true;
-   //       animateNavBar();
-   //    }
+      }
+      navBar.value.classList.remove('hidden')
+      navBar.value.classList.add('flex')
+      navBar.value.childNodes.forEach((child: HTMLElement) => {
+         child.style.transform = 'translateX(0px)'
+         child.style.opacity = '1'
 
-   // } else {
-   //    menuOpen.value = false;
-   //    animateNavBar();
-   // }
-   // console.log(menuOpen.value);
+      })
+      navBar.value.style.opacity = '1'
+   } else {
+      navBar.value.classList.add('hidden')
+      if (menuOpen.value) {
+         menuOpen.value = false;
+         animateIcon();
+         // animateNavBar();
+      }
+   }
 }
+const allowToggle = ref<boolean>(true)
 const toggleMenu = () => {
+   if (!allowToggle.value) return;
    menuOpen.value = !menuOpen.value;
    animateIcon();
    animateNavBar();
@@ -61,28 +74,43 @@ const animateNavBar = () => {
          easing: 'easeInOutQuad',
          duration: 300,
          begin: () => {
-            navBar.value.style.display = 'flex';
+            allowToggle.value = false;
+            // navBar.value.style.display = 'flex';
+            navBar.value.classList.remove('hidden')
+            navBar.value.classList.add('flex')
          }
+
       });
       anime({
          targets: navBar.value.children,
-         translateY: [-200, 0],
+         translateX: [300, 0],
          opacity: [0, 1],
+
          easing: 'easeInOutQuad',
-         duration: 300,
-         delay: anime.stagger(100)
+         duration: 400,
+         delay: anime.stagger(100),
+         complete() {
+            allowToggle.value = true;
+         }
       });
    } else {
       anime({
          targets: navBar.value.children,
-         translateY: [0, -200],
+         translateX: [0, 300],
          opacity: [1, 0],
+
          easing: 'easeInOutQuad',
-         duration: 300,
-         delay: anime.stagger(100),
+         duration: 100,
+         delay: anime.stagger(33),
          // direction: 'reverse',
+         begin() {
+            allowToggle.value = false;
+         },
          complete: () => {
-            navBar.value.style.display = 'none';
+            allowToggle.value = true;
+            // navBar.value.style.display = 'none';
+            navBar.value.classList.add('hidden')
+            navBar.value.classList.remove('flex')
          }
       });
       // anime({
@@ -255,3 +283,12 @@ onMounted(() => {
       </button>
    </header>
 </template>
+
+<!-- <style>
+@media screen and (min-width: 1024px) {
+   header nav {
+      display: flex !important;
+   }
+
+}
+</style> -->
