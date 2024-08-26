@@ -188,6 +188,7 @@ onMounted(() => {
       start: "top top",
       end: "max",
       onUpdate: (self) => {
+         if (menuOpen.value) return;
          self.direction === -1 ? showAnim.play() : showAnim.reverse()
       }
    });
@@ -196,12 +197,11 @@ onMounted(() => {
 </script>
 <template>
    <header
-      class="flex w-full justify-center py-3 z-[1000] transition-colors duration-600 sticky top-0 left-0 lg:mt-10 h-[60px] lg:h-auto  bg-background/70 "
+      class="flex w-screen justify-center py-3 z-[1000] transition-colors duration-600 sticky top-0 left-0 lg:mt-10 h-[60px] lg:h-auto  bg-background/70 "
       ref="header">
-      <!-- hamburger -->
 
       <nav ref="navBar"
-         class="flex-col hidden lg:flex lg:flex-row absolute left-0 lg:relative lg:py-2  top-0  items-center w-full lg:w-auto h-screen lg:h-auto text-4xl lg:text-base lg:bg-transparent">
+         class="flex-col hidden lg:flex lg:flex-row absolute left-0 lg:relative top-0  items-center w-screen lg:w-auto h-screen lg:h-auto text-4xl lg:text-base lg:bg-transparent">
          <div class=" bg-second lg:bg-transparent h-full w-screen lg:h-0 lg:w-0"></div>
          <NavigatorButton class=" bg-second lg:bg-transparent" @click="(e) => {
             e.preventDefault();
@@ -274,6 +274,7 @@ onMounted(() => {
 
          <CursorEffect />
       </nav>
+      <!-- hamburger -->
       <button @click="toggleMenu" class="z-[100] absolute top-1/2 -translate-y-1/2 right-[4vw] lg:hidden"
          aria-label="menu">
          <svg ref="menuIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -284,11 +285,4 @@ onMounted(() => {
    </header>
 </template>
 
-<!-- <style>
-@media screen and (min-width: 1024px) {
-   header nav {
-      display: flex !important;
-   }
-
-}
-</style> -->
+<style></style>
