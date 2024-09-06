@@ -11,14 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
 const menuOpen = ref<boolean>(false);
 const menuIcon = ref<SVGSVGElement | null>(null);
 const navBar = ref<HTMLElement | null>(null);
+const allowToggle = ref<boolean>(true)
+const screenSize = ref<number>(window.innerWidth)
 const handleResizeScreen = () => {
    if (window.innerWidth > 1024) {
-      if (menuOpen.value) {
-         menuOpen.value = false;
-         animateIcon();
-         // animateNavBar();
 
-      }
       navBar.value.classList.remove('hidden')
       navBar.value.classList.add('flex')
       navBar.value.childNodes.forEach((child: HTMLElement) => {
@@ -29,17 +26,19 @@ const handleResizeScreen = () => {
       navBar.value.style.opacity = '1'
    } else {
       navBar.value.classList.add('hidden')
-      if (menuOpen.value) {
-         menuOpen.value = false;
-         animateIcon();
-         // animateNavBar();
-      }
    }
+   if (menuOpen.value) {
+      menuOpen.value = false;
+      animateIcon();
+      // animateNavBar();
+
+   }
+   screenSize.value = window.innerWidth
 }
-const allowToggle = ref<boolean>(true)
 const toggleMenu = () => {
    if (!allowToggle.value) return;
    menuOpen.value = !menuOpen.value;
+   if (screenSize.value > 1024) return;
    animateIcon();
    animateNavBar();
 }
@@ -146,6 +145,9 @@ buttons.value.forEach((button: NavButton | any, index: number) => {
 
 // click event
 const handleActive = (index: number) => {
+   //temporary handle menu
+   allowToggle.value = true;
+   toggleMenu();
    buttons.value.forEach((button: NavButton | any, i: Number) => {
       if (i === index) {
          button.active = true
