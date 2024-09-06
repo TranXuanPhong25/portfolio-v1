@@ -14,7 +14,7 @@ module.exports = {
                 last: "#EEEEEE",
             },
             screens: {
-                sml: { min: "420px" },
+                sml: "420px",
                 msm: { max: "640px" },
             },
         },
