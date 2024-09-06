@@ -12,7 +12,7 @@ onMounted(() => {
          max: 5,
          speed: 1000,
          glare: true,
-         'max-glare': 0.1,
+         'max-glare': 0.05,
 
       });
    }
@@ -21,14 +21,14 @@ onMounted(() => {
 <template>
 
    <div
-      class="container mx-auto text-left relative p-6 sml:p-9 md:p-12 rounded-[25px] z-10 max-w-[860px] w-[90%] h-[600px] bg-background "
+      class="mx-auto text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%] h-[700px] md:h-[600px] bg-background "
       ref="tilt" data-aos="zoom-in-up">
       <div name="Silhouette" data-aos="fade-up"
-         class=" absolute z-10 top-[-13%] lg:-top-[90px] right-[-20px] lg:right-[-5%] w-[80%] md:w-[62%] h-[80%] md:h-[62%] select-none pointer-events-none hidden md:block">
+         class=" absolute z-10 top-[-13%] lg:-top-[90px] right-[-10px] lg:right-[-5%] w-[80%] md:w-[62%] h-[80%] md:h-[62%] select-none pointer-events-none hidden md:block">
          <img :src="silhouette" alt="">
       </div>
       <h1
-         class=" font-semibold text-white md:text-main text-5xl md:text-2xl text-center md:text-left tracking-widest sml:tracking-[0.16em]  md:tracking-wide">
+         class=" font-bold md:font-semibold text-white md:text-main text-5xl md:text-2xl text-center md:text-left tracking-widest sml:tracking-[0.16em]  md:tracking-wide">
          ABOUT ME</h1>
       <h1 class="text-6xl lg:text-7xl font-bold text-last hidden md:block">PROFILE</h1>
 
@@ -38,39 +38,38 @@ onMounted(() => {
          strong passion for full-stack development.
          I specialize in building beautiful and functional websites.
       </p>
-      <div class="w-full h-1 bg-second/50 my-7  rounded-full"></div>
-
-      <div class="w-full mx-auto p-1 text-lg">
-         <div class="grid grid-cols-11 gap-4">
+      <div class="w-full h-1 bg-second/50 my-7 rounded-full"></div>
+      <div class=" sml:text-lg flex  justify-center text-center">
+         <div class=" md:grid md:grid-cols-11 w-full ">
             <!-- First Column -->
             <div class="space-y-4 col-span-5">
-               <div class=" grid grid-cols-7 ">
-                  <span class=" col-span-3 font-semibold text-gray-600">Fullname</span>
-                  <span class="text-main col-span-4">Tran Xuan Phong</span>
+               <div class=" md:grid grid-cols-3 ">
+                  <span class="col-span-1 font-semibold text-gray-600 ">Fullname:</span>
+                  <span class="ml-3 md:ml-0 text-main col-span-2">Tran Xuan Phong</span>
                </div>
-               <div class=" grid grid-cols-7">
-                  <span class=" col-span-3 font-semibold text-gray-600">Age</span>
-                  <span class="text-main col-span-4">19 Years</span>
+               <div class=" md:grid grid-cols-3">
+                  <span class="col-span-1 font-semibold text-gray-600 ">Age:</span>
+                  <span class="ml-3 md:ml-0 text-main col-span-2">19 Years</span>
                </div>
-               <div class=" grid grid-cols-7">
-                  <span class=" col-span-3 font-semibold text-gray-600">Occupation</span>
-                  <span class="text-main col-span-4">Fullstacks Developer</span>
+               <div class=" md:grid grid-cols-3">
+                  <span class="col-span-1 font-semibold text-gray-600 ">Occupation:</span>
+                  <span class="ml-3 md:ml-0 text-main col-span-2">Fullstacks Developer</span>
                </div>
             </div>
 
             <!-- Second Column -->
-            <div class=" space-y-4 col-span-4">
-               <div class="grid grid-cols-2">
-                  <span class="font-semibold text-gray-600">Email</span>
-                  <span class="text-main">tranxuanphong26525@gmail.com</span>
+            <div class=" space-y-4 col-span-6 py-4 md:py-0">
+               <div class="md:grid grid-cols-11">
+                  <span class="font-semibold text-gray-600 col-span-3">Email:</span>
+                  <span class="ml-3 md:ml-0 text-main col-span-8">tranxuanphong26525@gmail.com</span>
                </div>
-               <div class="grid grid-cols-2">
-                  <span class="font-semibold text-gray-600">Address</span>
-                  <span class="text-main">Hanoi, Vietnam</span>
+               <div class="md:grid grid-cols-11">
+                  <span class="font-semibold text-gray-600 col-span-3">Address:</span>
+                  <span class="ml-3 md:ml-0 text-main col-span-8">Hanoi, Vietnam</span>
                </div>
-               <div class="grid grid-cols-2">
-                  <span class="font-semibold text-gray-600">Experience</span>
-                  <span class="text-main">Under one year</span>
+               <div class="md:grid grid-cols-11">
+                  <span class="font-semibold text-gray-600 col-span-3">Experience:</span>
+                  <span class="ml-3 md:ml-0 text-main col-span-8">Under one year</span>
                </div>
             </div>
          </div>
