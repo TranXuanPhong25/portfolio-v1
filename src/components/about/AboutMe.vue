@@ -20,15 +20,17 @@ onMounted(() => {
 </script>
 <template>
 
-   <div class="container mx-auto text-left relative p-12 rounded-[25px] z-10 w-[860px] h-[600px] bg-background "
+   <div
+      class="container mx-auto text-left relative p-6 sml:p-9 md:p-12 rounded-[25px] z-10 max-w-[860px] w-[90%] h-[600px] bg-background "
       ref="tilt" data-aos="zoom-in-up">
       <div name="Silhouette" data-aos="fade-up"
-         class=" absolute z-10 -top-[90px] right-[-10%] w-[65%] h-[65%] select-none pointer-events-none">
-
+         class=" absolute z-10 top-[-13%] lg:-top-[90px] right-[-20px] lg:right-[-5%] w-[80%] md:w-[62%] h-[80%] md:h-[62%] select-none pointer-events-none hidden md:block">
          <img :src="silhouette" alt="">
       </div>
-      <h1 class="text-2xl font-semibold tracking-widest">ABOUT ME</h1>
-      <h1 class="text-7xl font-bold text-last">PROFILE</h1>
+      <h1
+         class=" font-semibold text-white md:text-main text-5xl md:text-2xl text-center md:text-left tracking-widest sml:tracking-[0.16em]  md:tracking-wide">
+         ABOUT ME</h1>
+      <h1 class="text-6xl lg:text-7xl font-bold text-last hidden md:block">PROFILE</h1>
 
       <div class="w-full h-1 bg-second/50 my-7  rounded-full"></div>
       <p class="text-xl my-7 text-justify">
