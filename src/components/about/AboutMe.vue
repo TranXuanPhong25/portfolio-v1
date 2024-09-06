@@ -21,7 +21,7 @@ onMounted(() => {
 <template>
 
    <div
-      class="mx-auto text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%] h-[700px] md:h-[600px] bg-background "
+      class="sml:text-lg mx-auto  text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%] h-[740px] md:h-[600px] bg-background "
       ref="tilt" data-aos="zoom-in-up">
       <div name="Silhouette" data-aos="fade-up"
          class=" absolute z-10 top-[-13%] lg:-top-[90px] right-[-10px] lg:right-[-5%] w-[80%] md:w-[62%] h-[80%] md:h-[62%] select-none pointer-events-none hidden md:block">
@@ -33,43 +33,49 @@ onMounted(() => {
       <h1 class="text-6xl lg:text-7xl font-bold text-last hidden md:block">PROFILE</h1>
 
       <div class="w-full h-1 bg-second/50 my-7  rounded-full"></div>
-      <p class="text-xl my-7 text-justify">
+      <p class=" my-7 text-justify">
          I'm a junior year Computer Science major at the University of Engineering and Technology in Vietnam, with a
          strong passion for full-stack development.
          I specialize in building beautiful and functional websites.
       </p>
       <div class="w-full h-1 bg-second/50 my-7 rounded-full"></div>
-      <div class=" sml:text-lg flex  justify-center text-center">
-         <div class=" md:grid md:grid-cols-11 w-full ">
+      <div class=" flex justify-center ">
+         <div class=" md:grid md:grid-cols-11   w-[auto] md:w-full ">
             <!-- First Column -->
             <div class="space-y-4 col-span-5">
-               <div class=" md:grid grid-cols-3 ">
-                  <span class="col-span-1 font-semibold text-gray-600 ">Fullname:</span>
-                  <span class="ml-3 md:ml-0 text-main col-span-2">Tran Xuan Phong</span>
+               <div class=" grid grid-cols-2 md:grid-cols-3 ">
+                  <span class="pl-[0%] md:pl-0  md:text-left col-span-1 font-semibold text-gray-600  ">Fullname:</span>
+                  <span class=" text-right pr-[0%] md:pr-0 md:text-left text-main  md:col-span-2">Tran Xuan
+                     Phong</span>
                </div>
-               <div class=" md:grid grid-cols-3">
-                  <span class="col-span-1 font-semibold text-gray-600 ">Age:</span>
-                  <span class="ml-3 md:ml-0 text-main col-span-2">19 Years</span>
+               <div class=" grid grid-cols-2 md:grid-cols-3">
+                  <span class="pl-[0%] md:pl-0  md:text-left col-span-1 font-semibold text-gray-600  ">Age:</span>
+                  <span class=" text-right pr-[0%] md:pr-0 md:text-left text-main  md:col-span-2">19 Years</span>
                </div>
-               <div class=" md:grid grid-cols-3">
-                  <span class="col-span-1 font-semibold text-gray-600 ">Occupation:</span>
-                  <span class="ml-3 md:ml-0 text-main col-span-2">Fullstacks Developer</span>
+               <div class=" grid grid-cols-2 md:grid-cols-3">
+                  <span
+                     class="pl-[0%] md:pl-0  md:text-left col-span-1 font-semibold text-gray-600  ">Occupation:</span>
+                  <span class="text-right pr-[0%] md:pr-0  md:text-left text-main  md:col-span-2">Fullstacks
+                     Developer</span>
                </div>
             </div>
 
             <!-- Second Column -->
             <div class=" space-y-4 col-span-6 py-4 md:py-0">
-               <div class="md:grid grid-cols-11">
-                  <span class="font-semibold text-gray-600 col-span-3">Email:</span>
-                  <span class="ml-3 md:ml-0 text-main col-span-8">tranxuanphong26525@gmail.com</span>
+               <div class="grid grid-cols-2 md:grid-cols-11">
+                  <span class="pl-[0%] md:pl-0  md:text-left font-semibold text-gray-600 md:col-span-3 ">Email:</span>
+                  <span
+                     class=" text-right pr-[0%] md:pr-0 md:text-left text-main  md:col-span-8">tranxuanphong26525<span
+                        class="hidden md:inline">@gmail.com</span></span>
                </div>
-               <div class="md:grid grid-cols-11">
-                  <span class="font-semibold text-gray-600 col-span-3">Address:</span>
-                  <span class="ml-3 md:ml-0 text-main col-span-8">Hanoi, Vietnam</span>
+               <div class="grid grid-cols-2 md:grid-cols-11">
+                  <span class="pl-[0%] md:pl-0  md:text-left font-semibold text-gray-600 md:col-span-3 ">Address:</span>
+                  <span class="text-right pr-[0%] md:pr-0  md:text-left text-main  md:col-span-8">Hanoi, Vietnam</span>
                </div>
-               <div class="md:grid grid-cols-11">
-                  <span class="font-semibold text-gray-600 col-span-3">Experience:</span>
-                  <span class="ml-3 md:ml-0 text-main col-span-8">Under one year</span>
+               <div class="grid grid-cols-2 md:grid-cols-11">
+                  <span
+                     class="pl-[0%] md:pl-0  md:text-left font-semibold text-gray-600 md:col-span-3 ">Experience:</span>
+                  <span class="text-right pr-[0%] md:pr-0  md:text-left text-main  md:col-span-8">Under one year</span>
                </div>
             </div>
          </div>
