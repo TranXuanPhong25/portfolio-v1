@@ -21,7 +21,7 @@ onMounted(() => {
 <template>
 
    <div
-      class="sml:text-lg mx-auto  text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%] h-[740px] md:h-[600px] bg-background "
+      class="sml:text-lg mx-auto  text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%]  bg-background "
       ref="tilt" data-aos="zoom-in-up">
       <div name="Silhouette" data-aos="fade-up"
          class=" absolute z-10 top-[-13%] lg:-top-[90px] right-[-10px] lg:right-[-5%] w-[80%] md:w-[62%] h-[80%] md:h-[62%] select-none pointer-events-none hidden md:block">
