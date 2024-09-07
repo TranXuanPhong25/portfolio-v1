@@ -17,21 +17,22 @@
    cursor: grab;
 }
 
+@media screen and (max-width: 768px) {
+   .icon-cloud {
+      border-radius: 20px;
+      width: 100vw !important;
+      height: 70vh !important;
+      ;
+
+   }
+}
+
 @media screen and (max-width: 900px) {
    .icon-cloud {
       width: 90vw;
       height: 90vw;
    }
 
-}
-
-@media screen and (max-width: 768px) {
-   .icon-cloud {
-      border-radius: 20px;
-      width: 100vw;
-      height: 70vh;
-
-   }
 }
 </style>
 <script setup lang="ts">
@@ -113,7 +114,7 @@ const initThreeJS = () => {
          radius * Math.cos(theta)
       );
 
-      sprite.scale.set(0.85, 0.85, 0.85); // Initial scale
+      sprite.scale.set(0.7, 0.7, 0.7); // Initial scale
 
       sprite.userData = { originalScale: sprite.scale.clone() };
 
