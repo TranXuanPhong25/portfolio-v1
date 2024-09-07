@@ -8,7 +8,7 @@ defineProps({
    <div class="flex w-full justify-center mt-8" data-aos="zoom-out-up">
       <a :href="buttonLink" class="cssbuttons-io-button dbutton">
          {{ buttonText }}
-         <div class="getcv-subicon  ">
+         <div class="getcv-subicon">
             <slot></slot>
          </div>
       </a>

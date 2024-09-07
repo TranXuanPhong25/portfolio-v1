@@ -34,13 +34,9 @@ onMounted(() => {
             history.replaceState(null, null, `#${sections[index - 1].id}`);
             window.dispatchEvent(new Event('pseudohashchange'));
             window.dispatchEvent(new Event('hashchange'));
-
-
          }
       });
-
    });
-
 })
 </script>
 

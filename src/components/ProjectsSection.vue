@@ -14,9 +14,7 @@ const projectsData = [
       image: '/img/project/portfoliov1.png',
       repo: 'https://github.com/TranXuanPhong25/portfolio-v1',
       demo: 'https://portfoliov1-txphong25.vercel.app/',
-
    }
-
 ]
 const project = ref<HTMLElement | null>(null);
 onMounted(() => {
@@ -39,21 +37,21 @@ onMounted(() => {
          class="project-card-wrapper bg-background w-[calc(95vw-20px)] lg:w-[80vw] 2xl:w-[70vw] h-auto overflow-hidden  my-[100px] mx-auto py-1 rounded-lg shadow-md shadow-black"
          data-aos="flip-down">
          <div class="w-[99.5%] project-card bg-background mx-auto  rounded-lg  ">
+            <!-- card title -->
             <div class="project-card-text w-full z-10 p-5 sm:p-10 " data-aos="fade-right">
                <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-3">{{ project.title }}</h1>
                <p class="text-xl">{{ project.description }}</p>
             </div>
+            <!-- image and link  -->
             <div class="project-card-image w-full rounded-lg block group relative overflow-hidden"
                data-aos="zoom-in-down">
                <img :src="project.image" alt="project image"
                   class=" w-full group-hover:blur-[4px] group-hover:brightness-50 duration-300 ">
-
                <a :href="project.demo" target="_blank"
-                  class="border-2 border-main  text-2xl text-white bg-primary rounded-md p-2 m-2 group-hover:top-[35%] top-[-50%] left-[50%] translate-x-[-50%] absolute  duration-300 hover:bg-main hover:text-white">Demo</a>
+                  class="border-2 border-main  text-2xl text-white bg-primary rounded-md p-2 m-2 duration-500 hover:bg-main hover:text-white left-[50%] translate-x-[-50%] absolute opacity-0 group-hover:opacity-100 top-1/4 group-hover:top-[35%] ">Demo</a>
                <a :href="project.repo" target="_blank"
-                  class="border-2 border-main  text-2xl text-white bg-primary rounded-md p-2 m-2 group-hover:top-[calc(35%+55px)] top-[-50%] left-[50%] translate-x-[-50%] absolute  duration-300 hover:bg-main hover:text-white">View
+                  class="border-2 border-main  text-2xl text-white bg-primary rounded-md p-2 m-2 duration-500 hover:bg-main hover:text-white left-[50%] translate-x-[-50%] absolute opacity-0 group-hover:opacity-100 top-1/4 group-hover:top-[calc(35%+55px)] ">View
                   source</a>
-
             </div>
          </div>
       </div>

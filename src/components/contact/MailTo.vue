@@ -1,25 +1,25 @@
 <script setup lang="ts">
 import WavyText from './WavyText.vue';
-
+const HANGING_TEXTS = [
+   "Mail",
+   "me",
+   "now"
+];
+const MAIL_URI = "https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com";
 </script>
+
 <template>
 
    <span class="wrapper absolute top-0 right-1/2 translate-x-1/2">
-      <span class=" span-text-1">
-         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com" target="_blank">
-            Mail
+
+      <span v-for="(text, index) in HANGING_TEXTS" :key="index" :class="'span-text-' + (index + 1)">
+         <a :href="MAIL_URI" target="_blank">
+            {{ text }}
          </a>
       </span>
-      <span class=" span-text-2"> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com"
-            target="_blank">
-            me
-         </a></span>
-      <span class=" span-text-3"> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com"
-            target="_blank">
-            now
-         </a></span>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tranxuanphong26525@gmail.com" target="_blank"
-         class="flex justify-center items-center bg-sescond  absolute top-1/2 p-5 z-30 -translate-y-1/2   ">
+
+      <a :href="MAIL_URI" target="_blank"
+         class="flex justify-center items-center bg-sescond  absolute top-1/2 p-5 z-30 -translate-y-1/2">
          <!-- https://uiverse.io/profile/barisdogansutcu -->
          <button class="mail-button">
             <div class="docs">
@@ -43,10 +43,8 @@ import WavyText from './WavyText.vue';
 <style scoped>
 .wrapper {
    height: 100vh;
-   /* width: 50vw; */
    width: 100vw;
    overflow: hidden;
-   /* padding: 100px;    */
    text-align: center;
    display: flex;
    justify-content: center;
@@ -55,15 +53,14 @@ import WavyText from './WavyText.vue';
 
 
 .wrapper span {
-
    -webkit-text-stroke-width: 1.25px;
    -webkit-text-stroke-color: #000;
    font-size: 100px;
    text-shadow: 0 0px #f3c623, 0 0px #f2aaaa;
    transform: translate(0, 55vh) rotate(4deg);
    display: inline-block;
+   /* font-family: 'Titan One', cursive; */
    font-family: 'Poppins', sans-serif;
-   /* font-family: , cursive; */
    color: #fff;
    margin: 0 10px;
 
@@ -168,9 +165,6 @@ import WavyText from './WavyText.vue';
 .mail-button:hover .mail {
    transform: translateY(-90%);
    width: 80%;
-   /* height: 90px; */
-   /* border-radius: 50%; */
-
 }
 
 .mail svg,

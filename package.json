@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "author": {
-    "name": "TranXuanPhong25",
-    "email": "tranxuanphong26525@gmail.com"
-  },
-  "homepage": "https://github.com/TranXuanPhong25/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -24,7 +19,6 @@
     "animejs": "^3.2.2",
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
-    "pinia": "^2.1.7",
     "three": "^0.167.1",
     "typed.js": "^2.1.0",
     "vanilla-tilt": "^1.8.1",

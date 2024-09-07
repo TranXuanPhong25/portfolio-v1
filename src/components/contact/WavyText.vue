@@ -6,8 +6,10 @@ const props = defineProps({
       required: true
    }
 })
+
 const words = ref<string[]>([]);
-const suffixSumIndex = ref<number[]>([]);
+const suffixSumIndex = ref<number[]>([]); // handle the index of each word in the text
+
 onMounted(() => {
    suffixSumIndex.value = Array(props.text.split(' ').length).fill(0);
    words.value = props.text.split(' ');
@@ -18,8 +20,7 @@ onMounted(() => {
 })
 </script>
 <template>
-
-   <div class="waviy" data-aos="zoom-out">
+   <div class="wavy" data-aos="zoom-out">
       <template v-for="index in words.length" :key="index">
 
          <span v-for="i in words[index - 1].length" :style="'--i:' + (i + (index == 1 ? 0 : suffixSumIndex[index - 2]))"
@@ -29,28 +30,27 @@ onMounted(() => {
          <span>{{ index != words.length ? '&nbsp;' : '' }}</span>
       </template>
    </div>
-
 </template>
 <style scoped>
-.waviy {
+.wavy {
    position: relative;
-   /* -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2)); */
+   -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
    font-size: 2rem;
 }
 
-.waviy span {
+.wavy span {
    letter-spacing: 0.3rem;
    /* font-family: 'Alfa Slab One', cursive; */
    position: relative;
    display: inline-block;
    color: #fff;
    text-transform: uppercase;
-   animation: waviy 1.5s infinite;
+   animation: wavy 1.5s infinite;
    animation-delay: calc(.15s * var(--i));
 
 }
 
-@keyframes waviy {
+@keyframes wavy {
 
    0%,
    40%,

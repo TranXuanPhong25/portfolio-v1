@@ -1,6 +1,5 @@
 <template>
-
-   <div class="relative mx-auto py-10  w-full max-w-[960px] vertical-timeline">
+   <div class="mx-auto py-10  w-full max-w-[960px] vertical-timeline -translate-x-[40%] sm:translate-x-0">
       <slot></slot>
    </div>
 </template>

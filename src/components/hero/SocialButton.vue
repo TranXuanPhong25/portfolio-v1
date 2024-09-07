@@ -11,7 +11,7 @@ defineProps({
 <template>
    <button class="Btn">
       <span class="svgContainer ">
-         <slot>empty</slot>
+         <slot></slot>
       </span>
       <span class="BG" :class="color"></span>
    </button>

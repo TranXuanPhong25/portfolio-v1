@@ -7,8 +7,6 @@ import 'aos/dist/aos.css';
 import FluidContainer from './components/FluidContainer.vue';
 
 import gsap from 'gsap'
-
-
 const dustTrailMode = ref(true)
 
 function throttle(func, limit) {
@@ -67,7 +65,6 @@ onMounted(() => {
    });
 
    document.body.addEventListener('mousemove', throttledMouseMove);
-
 });
 
 onUnmounted(() => {
@@ -78,8 +75,6 @@ onUnmounted(() => {
 
 <template>
    <FluidContainer v-if="!dustTrailMode" />
-
-
    <main class="z-[100] relative">
       <HeaderComponent />
       <RouterView />
@@ -87,8 +82,6 @@ onUnmounted(() => {
    </main>
 
 </template>
-
-
 
 <style>
 .trail {

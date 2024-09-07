@@ -1,28 +1,13 @@
-<template>
-   <div>
-      <div class="marquee" ref="marquee">
-         <div class="marquee-content">
-            <span v-for="skill in marqueeContent" :key="skill">{{ skill }}</span>
-            <span v-for="skill in marqueeContent" :key="skill">{{ skill }}</span>
-
-
-         </div>
-      </div>
-   </div>
-</template>
-
 <script setup>
 import { onMounted, ref } from 'vue';
+//code from stackoverflow
 const shuffle = (array) => {
    let currentIndex = array.length;
-
    // While there remain elements to shuffle...
    while (currentIndex != 0) {
-
       // Pick a remaining element...
       let randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-
       // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
          array[randomIndex], array[currentIndex]];
@@ -44,7 +29,9 @@ const marqueeContent = [
    'Typescript',
    'TailwindCSS',
 ]
+
 shuffle(marqueeContent);
+
 const marquee = ref(null);
 onMounted(() => {
    if (Math.random() > 0.5) {
@@ -53,12 +40,21 @@ onMounted(() => {
    } else {
       marquee.value.style.setProperty('--marquee-translate-start', '0%');
       marquee.value.style.setProperty('--marquee-translate-end', '-50%');
-
-
    }
    marquee.value.style.setProperty('--duration', `${Math.random() * 20 + 30}s`);
 });
 </script>
+
+<template>
+   <div>
+      <div class="marquee" ref="marquee">
+         <div class="marquee-content">
+            <span v-for="skill in marqueeContent" :key="skill">{{ skill }}</span>
+            <span v-for="skill in marqueeContent" :key="skill">{{ skill }}</span>
+         </div>
+      </div>
+   </div>
+</template>
 
 <style scoped>
 .marquee {
@@ -89,7 +85,6 @@ onMounted(() => {
    .marquee-content span {
       font-size: 5rem;
    }
-
 }
 
 @keyframes marquee {

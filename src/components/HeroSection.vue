@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted } from 'vue';
 import GetCVButton from './hero/GetCVButton.vue';
 import Typed from 'typed.js';
-import HeroIllustration from './hero/HeroBrainstormSVG.vue';
+import HeroBrainstormSVG from './hero/HeroBrainstormSVG.vue';
 import WaveBackground from './hero/WaveBackground.vue';
 import SocialBar from '@/components/hero/SocialBar.vue';
 
@@ -31,7 +31,7 @@ onUnmounted(() => {
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />
       </div>
-      <HeroIllustration
+      <HeroBrainstormSVG
          class="select-none pointer-events-none lg:mb-0 xl:w-[47vw] xl:h-[47vw] max-w-[850px] max-h-[850px] -m-14 z-10 w-[90vw] h-[90vw] sm:block hidden "
          data-aos="flip-down" />
       <!-- text section -->

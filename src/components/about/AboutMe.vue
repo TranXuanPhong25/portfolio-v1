@@ -1,46 +1,48 @@
 <script setup lang="ts">
-import anime from 'animejs/lib/anime.es.js';
 import { ref, onMounted } from 'vue';
 import silhouette from '@/assets/undraw_personal_info_re_ur1n (1).svg'; // Adjust the path as necessary
 import GetCVButton from '../hero/GetCVButton.vue';
 import VanillaTilt from 'vanilla-tilt';
-const tilt = ref<HTMLElement | null>(null);
-onMounted(() => {
 
+const tilt = ref<HTMLElement | null>(null);
+
+onMounted(() => {
    if (tilt.value) {
       VanillaTilt.init(tilt.value, {
          max: 5,
          speed: 1000,
          glare: true,
          'max-glare': 0.05,
-
       });
    }
 });
 </script>
 <template>
-
    <div
-      class="sml:text-lg mx-auto  text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%]  bg-background "
+      class="sml:text-lg mx-auto  text-left relative p-6 md:p-8 lg:p-12 rounded-lg md:rounded-[25px] z-10 max-w-[880px] w-[95%] bg-background "
       ref="tilt" data-aos="zoom-in-up">
       <div name="Silhouette" data-aos="fade-up"
          class=" absolute z-10 top-[-13%] lg:-top-[90px] right-[-10px] lg:right-[-5%] w-[80%] md:w-[62%] h-[80%] md:h-[62%] select-none pointer-events-none hidden md:block">
          <img :src="silhouette" alt="">
       </div>
+
       <h1
          class=" font-bold md:font-semibold text-white md:text-main text-5xl md:text-2xl text-center md:text-left tracking-widest sml:tracking-[0.16em]  md:tracking-wide">
          ABOUT ME</h1>
       <h1 class="text-6xl lg:text-7xl font-bold text-last hidden md:block">PROFILE</h1>
 
-      <div class="w-full h-1 bg-second/50 my-7  rounded-full"></div>
+      <div class="w-full h-1 bg-second/50 my-7 rounded-full"></div>
+
       <p class=" my-7 text-justify">
          I'm a junior year Computer Science major at the University of Engineering and Technology in Vietnam, with a
          strong passion for full-stack development.
          I specialize in building beautiful and functional websites.
       </p>
+
       <div class="w-full h-1 bg-second/50 my-7 rounded-full"></div>
+
       <div class=" flex justify-center ">
-         <div class=" md:grid md:grid-cols-11   w-[auto] md:w-full ">
+         <div class=" md:grid md:grid-cols-11  w-[auto] md:w-full ">
             <!-- First Column -->
             <div class="space-y-4 col-span-5">
                <div class=" grid grid-cols-2 md:grid-cols-3 ">

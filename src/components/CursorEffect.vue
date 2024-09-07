@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const dustTrailMode = ref(true)
+
 const toggleCursorEffect = () => {
    dustTrailMode.value = !dustTrailMode.value
    window.dispatchEvent(new Event('toggleCursorEffect'))
 }
-
 </script>
-
 <template>
    <div class=" mt-10 lg:mt-0 absolute lg:relative lg:top-0 top-8 right-[4vw] lg:left-0 ml-0 lg:ml-4 ">
       <label class="cusor-mode">
