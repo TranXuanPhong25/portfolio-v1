@@ -4,7 +4,7 @@ import AboutMe from './about/AboutMe.vue';
 
 </script>
 <template>
-   <section id="about" class=" min-h-screen bg-second/70 flex items-center justify-center relative">
+   <section id="about" class=" h-[max(800px,100vh)] bg-second/70 flex items-center justify-center relative">
       <AboutMe />
    </section>
 </template>
