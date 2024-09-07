@@ -5,8 +5,8 @@
 <style>
 .icon-cloud {
    backdrop-filter: blur(10px) brightness(0.8);
-   width: 40vw;
-   height: 40vw;
+   width: 800px;
+   height: 800px;
    position: relative;
    display: flex;
    justify-content: center;
@@ -15,6 +15,23 @@
    z-index: 30;
    border-radius: 50%;
    cursor: grab;
+}
+
+@media screen and (max-width: 900px) {
+   .icon-cloud {
+      width: 90vw;
+      height: 90vw;
+   }
+
+}
+
+@media screen and (max-width: 768px) {
+   .icon-cloud {
+      border-radius: 20px;
+      width: 100vw;
+      height: 70vh;
+
+   }
 }
 </style>
 <script setup lang="ts">
