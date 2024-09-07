@@ -113,7 +113,7 @@ const initThreeJS = () => {
          radius * Math.cos(theta)
       );
 
-      sprite.scale.set(0.7, 0.7, 0.7); // Initial scale
+      sprite.scale.set(0.85, 0.85, 0.85); // Initial scale
 
       sprite.userData = { originalScale: sprite.scale.clone() };
 

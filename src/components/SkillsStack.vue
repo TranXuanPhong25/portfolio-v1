@@ -1,11 +1,16 @@
 <template>
    <section class="w-full h-screen flex justify-center items-center relative overflow-hidden" id="skills">
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[-3%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[12%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[27%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[42%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[57%] opacity-30" />
-      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[72%] opacity-30" />
+      <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-0 opacity-30" />
+      <SkillMarquee
+         class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[calc(20vh-20px)] opacity-30" />
+      <SkillMarquee
+         class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[calc(40vh-20px)] opacity-30" />
+      <SkillMarquee
+         class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[calc(60vh-20px)] opacity-30" />
+      <SkillMarquee
+         class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[calc(80vh-20px)] opacity-30" />
+      <SkillMarquee
+         class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[calc(100vh-20px)] opacity-30" />
       <!-- <SkillMarquee class="overflow-hidden whitespace-nowrap w-full box-border  p-3 absolute top-[85%]" /> -->
       <SkillSphere />
    </section>
