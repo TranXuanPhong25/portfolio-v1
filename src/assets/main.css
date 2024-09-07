@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
-
 html {
     width: 100vw;
     scroll-behavior: smooth;
