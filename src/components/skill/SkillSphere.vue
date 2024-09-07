@@ -22,7 +22,7 @@
       border-radius: 20px;
       width: 100vw !important;
       height: 70vh !important;
-      ;
+
 
    }
 }

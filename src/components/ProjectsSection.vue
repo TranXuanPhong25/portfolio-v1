@@ -36,7 +36,7 @@ onMounted(() => {
 <template>
    <section class="bg-second/70 flex-col items-center justify-center p-1 z-30 " id="projects" ref="project">
       <div v-for="project in projectsData" :key="project.title"
-         class="project-card-wrapper bg-background  w-[70vw] h-[90vh] overflow-hidden  my-[100px] mx-auto py-1 rounded-lg shadow-md shadow-black"
+         class="project-card-wrapper bg-background  w-[70vw] min-h-[90vh] overflow-hidden  my-[100px] mx-auto py-1 rounded-lg shadow-md shadow-black"
          data-aos="flip-down">
          <div class="w-[99.5%] project-card bg-background mx-auto  rounded-lg  ">
             <div class="project-card-text w-full p-10 " data-aos="fade-right">
