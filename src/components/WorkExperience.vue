@@ -24,7 +24,7 @@ onMounted(() => {
 
 </script>
 <template>
-   <section id="works" class=" w-fulll relative h-screen">
+   <section id="works" class=" w-full relative min-h-screen ">
       <div class="container mx-auto pt-20 text-center" data-aos="fade-up">
          <h2 class="text-7xl font-semibold ">Work Experience</h2>
          <p class="mt-4 max-w-2xl mx-auto text-xl">A timeline of my work experience.</p>

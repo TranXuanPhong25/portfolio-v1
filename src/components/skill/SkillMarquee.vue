@@ -56,7 +56,7 @@ onMounted(() => {
 
 
    }
-   marquee.value.style.setProperty('--duration', `${Math.random() * 20 + 25}s`);
+   marquee.value.style.setProperty('--duration', `${Math.random() * 20 + 30}s`);
 });
 </script>
 
@@ -83,6 +83,13 @@ onMounted(() => {
    font-weight: 600;
    text-transform: uppercase;
    text-shadow: -1px -1px 0 #4ECCA3, 1px -1px 0 #4ECCA3, -1px 1px 0 #4ECCA3, 1px 1px 0 #4ECCA3;
+}
+
+@media screen and (max-width: 768px) {
+   .marquee-content span {
+      font-size: 5rem;
+   }
+
 }
 
 @keyframes marquee {

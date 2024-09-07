@@ -26,7 +26,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-   <section class="w-full h-[80vh] flex xl:flex-row flex-col items-center justify-center relative mt-10 lg:mt-0 "
+   <section class="w-full min-h-[80vh] flex xl:flex-row flex-col items-center justify-center relative mt-10 lg:mt-0 "
       id="home">
       <div class=" absolute bottom-0  w-full">
          <WaveBackground />

@@ -62,7 +62,8 @@ import WavyText from './WavyText.vue';
    text-shadow: 0 0px #f3c623, 0 0px #f2aaaa;
    transform: translate(0, 55vh) rotate(4deg);
    display: inline-block;
-   font-family: "Titan One", cursive;
+   font-family: 'Poppins', sans-serif;
+   /* font-family: , cursive; */
    color: #fff;
    margin: 0 10px;
 
