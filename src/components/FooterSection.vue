@@ -42,12 +42,12 @@ onMounted(() => {
          <!-- <MailTo /> -->
       </div>
       <!-- <MailTo /> -->
-      <div class=" bg-second text-main flex items-center justify-center z-10 pb-3">
+      <div class=" bg-second text-main flex text-center items-center justify-center z-10 pb-3">
          <div class="flex justify-between z-20">
-            <div class="flex justify-between w-[600px] max-w-[450px]">
+            <div class="sm:flex justify-between w-[600px] max-w-[450px]">
 
                <div class="flex-row  items-center justify-center">
-                  <div class="flex " name="tech-used-in-project">
+                  <div class="flex items-center justify-center" name="tech-used-in-project">
                      <a href="https://vuejs.org/" target="_blank" class="mr   -2">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60"
                            viewBox="0 0 48 48">
@@ -90,8 +90,7 @@ onMounted(() => {
                   </div>
                   <p>Designed by Tran Xuan Phong</p>
                </div>
-               <div class="flex-col items-center justify-center h-full">
-
+               <div class="flex-col items-center justify-center">
                   <div class="button-container h-[60px] ">
                      <a href="https://github.com/TranXuanPhong25" target="_blank"
                         class="button flex-center bg-[#2d2e32]">
